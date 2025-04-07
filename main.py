@@ -4,6 +4,7 @@ import logging
 import os
 from collections import OrderedDict
 import re
+import time
 
 # 配置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -19,17 +20,20 @@ def read_subscribe_file(file_path):
         return []
 
 
-# 异步获取 URL 内容
+# 异步获取 URL 内容并测试响应时间
 async def fetch_url(session, url):
+    start_time = time.time()
     try:
-        async with session.get(url) as response:
+        async with session.get(url, timeout=10) as response:
             if response.status == 200:
-                return await response.text()
+                content = await response.text()
+                elapsed_time = time.time() - start_time
+                return content, elapsed_time
             else:
                 logging.warning(f"请求 {url} 失败，状态码: {response.status}")
     except Exception as e:
         logging.error(f"请求 {url} 时发生错误: {e}")
-    return None
+    return None, float('inf')
 
 
 # 解析 M3U 格式内容
@@ -55,7 +59,8 @@ def parse_m3u_content(content):
                         'url': url,
                         'tvg_id': tvg_id.group(1) if tvg_id else None,
                         'tvg_name': tvg_name.group(1) if tvg_name else None,
-                        'group_title': group_title.group(1) if group_title else None
+                        'group_title': group_title.group(1) if group_title else None,
+                        'response_time': float('inf')
                     }
                     channels.append(channel)
         i += 1
@@ -80,7 +85,8 @@ def parse_txt_content(content):
                     'url': url,
                     'tvg_id': None,
                     'tvg_name': None,
-                    'group_title': current_group
+                    'group_title': current_group,
+                    'response_time': float('inf')
                 }
                 channels.append(channel)
     return channels
@@ -100,11 +106,25 @@ def merge_and_deduplicate(channels_list):
     return unique_channels
 
 
+# 测试每个频道的响应时间
+async def test_channel_response_time(session, channel):
+    start_time = time.time()
+    try:
+        async with session.get(channel['url'], timeout=10) as response:
+            if response.status == 200:
+                elapsed_time = time.time() - start_time
+                channel['response_time'] = elapsed_time
+    except Exception as e:
+        logging.error(f"测试 {channel['url']} 响应时间时发生错误: {e}")
+    return channel
+
+
 # 生成 M3U 文件
 def generate_m3u_file(channels, output_path):
+    sorted_channels = sorted(channels, key=lambda x: x['response_time'])
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
-        for channel in channels:
+        for channel in sorted_channels:
             metadata = '#EXTINF:-1'
             if channel['tvg_id']:
                 metadata += f' tvg-id="{channel["tvg_id"]}"'
@@ -118,9 +138,10 @@ def generate_m3u_file(channels, output_path):
 
 # 生成 TXT 文件
 def generate_txt_file(channels, output_path):
+    sorted_channels = sorted(channels, key=lambda x: x['response_time'])
     with open(output_path, 'w', encoding='utf-8') as f:
         current_group = None
-        for channel in channels:
+        for channel in sorted_channels:
             group_title = channel['group_title']
             if group_title and group_title != current_group:
                 if current_group is not None:
@@ -149,10 +170,10 @@ async def main():
     # 异步获取所有 URL 的内容
     async with aiohttp.ClientSession() as session:
         tasks = [fetch_url(session, url) for url in urls]
-        contents = await asyncio.gather(*tasks)
+        results = await asyncio.gather(*tasks)
 
     all_channels = []
-    for content in contents:
+    for content, _ in results:
         if content:
             if '#EXTM3U' in content:
                 channels = parse_m3u_content(content)
@@ -162,6 +183,11 @@ async def main():
 
     # 合并并去重频道
     unique_channels = merge_and_deduplicate(all_channels)
+
+    # 测试每个频道的响应时间
+    async with aiohttp.ClientSession() as session:
+        tasks = [test_channel_response_time(session, channel) for channel in unique_channels]
+        unique_channels = await asyncio.gather(*tasks)
 
     # 生成 M3U 和 TXT 文件
     generate_m3u_file(unique_channels, output_m3u)
