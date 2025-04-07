@@ -1,1 +1,5 @@
 #EXTM3U
+#EXTINF:-1, Unknown Channel
+https://gh.tryxd.cn/https://raw.githubusercontent.com/alantang1977/auto-iptv/main/live_ipv4.txt
+#EXTINF:-1, Unknown Channel
+http://aktv.space/live.m3u
