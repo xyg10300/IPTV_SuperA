@@ -85,15 +85,30 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add output/result.m3u output/result.txt
-          if git diff --staged --quiet; then
-            echo "No changes to commit in output files."
+          files_to_add=()
+          if [ -f "output/result.m3u" ]; then
+            files_to_add+=("output/result.m3u")
           else
-            echo "Committing and pushing changes to the repository..."
-            git commit -m "Update IPTV files"
-            git push
-            if [ $? -ne 0 ]; then
-              echo "Failed to push changes to the repository. Check Git configuration or permissions."
-              exit 1
+            echo "File output/result.m3u not found. Skipping it."
+          fi
+          if [ -f "output/result.txt" ]; then
+            files_to_add+=("output/result.txt")
+          else
+            echo "File output/result.txt not found. Skipping it."
+          fi
+          if [ ${#files_to_add[@]} -gt 0 ]; then
+            git add "${files_to_add[@]}"
+            if git diff --staged --quiet; then
+              echo "No changes to commit in output files."
+            else
+              echo "Committing and pushing changes to the repository..."
+              git commit -m "Update IPTV files"
+              git push
+              if [ $? -ne 0 ]; then
+                echo "Failed to push changes to the repository. Check Git configuration or permissions."
+                exit 1
+              fi
             fi
+          else
+            echo "No files to add. Skipping commit and push."
           fi    
