@@ -102,10 +102,11 @@ def merge_and_deduplicate(channels_list):
     return unique_channels
 
 # 测试每个频道的响应时间
-async def test_channel_response_time(session, channel, num_tries=3):
-    response_time = await fetch_url(session, channel['url'], num_tries=1)
-    if response_time is not None:
-        channel['response_time'] = response_time
+async def test_channel_response_time(session, channel, num_tries=1):
+    start_time = time.time()
+    content = await fetch_url(session, channel['url'], num_tries)
+    if content is not None:
+        channel['response_time'] = time.time() - start_time
     return channel
 
 # 从文件读取要保留的组名和频道名
@@ -120,23 +121,25 @@ def read_include_list(file_path):
 # 生成 M3U 文件，增加 EPG 回放支持，可过滤响应时间过长的频道和特定组名或频道
 def generate_m3u_file(channels, output_path, replay_days=7, max_response_time=float('inf'),
                       include_groups=None, include_channels=None):
+    filtered_channels = []
+    for channel in channels:
+        if channel['response_time'] <= max_response_time:
+            if ((include_groups is None or channel['group_title'] in include_groups) and
+                    (include_channels is None or channel['name'] in include_channels)):
+                filtered_channels.append(channel)
+
+    if not filtered_channels:
+        logging.warning("过滤后无有效频道，M3U 文件将为空。")
+        return
+
+    group_channels = {}
+    for channel in filtered_channels:
+        group_title = channel['group_title'] or ''
+        group_channels.setdefault(group_title, []).append(channel)
+
+    sorted_groups = sorted(group_channels.keys())
+
     try:
-        group_channels = {}
-        for channel in channels:
-            # 过滤响应时间过长的频道
-            if channel['response_time'] <= max_response_time:
-                # 过滤特定组名或频道
-                if ((include_groups is None or channel['group_title'] in include_groups) and
-                        (include_channels is None or channel['name'] in include_channels)):
-                    group_title = channel['group_title'] or ''
-                    group_channels.setdefault(group_title, []).append(channel)
-
-        sorted_groups = sorted(group_channels.keys())
-
-        if not sorted_groups:
-            logging.warning("过滤后无有效频道，M3U 文件将为空。")
-            return
-
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write('#EXTM3U\n')
             for group_title in sorted_groups:
@@ -163,23 +166,25 @@ def generate_m3u_file(channels, output_path, replay_days=7, max_response_time=fl
 # 生成 TXT 文件，可过滤响应时间过长的频道和特定组名或频道
 def generate_txt_file(channels, output_path, max_response_time=float('inf'),
                       include_groups=None, include_channels=None):
+    filtered_channels = []
+    for channel in channels:
+        if channel['response_time'] <= max_response_time:
+            if ((include_groups is None or channel['group_title'] in include_groups) and
+                    (include_channels is None or channel['name'] in include_channels)):
+                filtered_channels.append(channel)
+
+    if not filtered_channels:
+        logging.warning("过滤后无有效频道，TXT 文件将为空。")
+        return
+
+    group_channels = {}
+    for channel in filtered_channels:
+        group_title = channel['group_title'] or ''
+        group_channels.setdefault(group_title, []).append(channel)
+
+    sorted_groups = sorted(group_channels.keys())
+
     try:
-        group_channels = {}
-        for channel in channels:
-            # 过滤响应时间过长的频道
-            if channel['response_time'] <= max_response_time:
-                # 过滤特定组名或频道
-                if ((include_groups is None or channel['group_title'] in include_groups) and
-                        (include_channels is None or channel['name'] in include_channels)):
-                    group_title = channel['group_title'] or ''
-                    group_channels.setdefault(group_title, []).append(channel)
-
-        sorted_groups = sorted(group_channels.keys())
-
-        if not sorted_groups:
-            logging.warning("过滤后无有效频道，TXT 文件将为空。")
-            return
-
         with open(output_path, 'w', encoding='utf-8') as f:
             for group_title in sorted_groups:
                 group = group_channels[group_title]
