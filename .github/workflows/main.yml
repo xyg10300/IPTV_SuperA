@@ -1,0 +1,38 @@
+name: 'Update schedule'
+
+on:
+  schedule:
+    - cron: '0 22,10 * * *'
+  workflow_dispatch:
+    branches:
+      - master
+      - dev
+
+jobs:
+  push:
+    runs-on: ubuntu-20.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run with setup-python 3.13
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
+          update-environment: true
+          cache: 'pipenv'
+      - name: Install pipenv
+        run: pip3 install --user pipenv
+      - name: Install dependecies
+        run: pipenv --python 3.13 && pipenv install --deploy
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Update
+        run: pipenv run dev
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          if ! git diff --staged --quiet; then
+            git commit -m "Github Action Auto Updated"
+            git push --force
