@@ -121,17 +121,19 @@ def read_include_list(file_path):
 # 生成 M3U 文件，增加 EPG 回放支持，可过滤响应时间过长的频道和特定组名或频道
 def generate_m3u_file(channels, output_path, replay_days=7, max_response_time=float('inf'),
                       include_groups=None, include_channels=None):
-    filtered_channels = []
-    for channel in channels:
-        if channel['response_time'] <= max_response_time:
-            if ((include_groups is None or channel['group_title'] in include_groups) and
-                    (include_channels is None or channel['name'] in include_channels)):
-                filtered_channels.append(channel)
+    # 过滤频道
+    filtered_channels = [
+        channel for channel in channels
+        if channel['response_time'] <= max_response_time
+        and (include_groups is None or channel['group_title'] in include_groups)
+        and (include_channels is None or channel['name'] in include_channels)
+    ]
 
     if not filtered_channels:
         logging.warning("过滤后无有效频道，M3U 文件将为空。")
         return
 
+    # 按组分组
     group_channels = {}
     for channel in filtered_channels:
         group_title = channel['group_title'] or ''
@@ -166,17 +168,19 @@ def generate_m3u_file(channels, output_path, replay_days=7, max_response_time=fl
 # 生成 TXT 文件，可过滤响应时间过长的频道和特定组名或频道
 def generate_txt_file(channels, output_path, max_response_time=float('inf'),
                       include_groups=None, include_channels=None):
-    filtered_channels = []
-    for channel in channels:
-        if channel['response_time'] <= max_response_time:
-            if ((include_groups is None or channel['group_title'] in include_groups) and
-                    (include_channels is None or channel['name'] in include_channels)):
-                filtered_channels.append(channel)
+    # 过滤频道
+    filtered_channels = [
+        channel for channel in channels
+        if channel['response_time'] <= max_response_time
+        and (include_groups is None or channel['group_title'] in include_groups)
+        and (include_channels is None or channel['name'] in include_channels)
+    ]
 
     if not filtered_channels:
         logging.warning("过滤后无有效频道，TXT 文件将为空。")
         return
 
+    # 按组分组
     group_channels = {}
     for channel in filtered_channels:
         group_title = channel['group_title'] or ''
@@ -199,6 +203,7 @@ def generate_txt_file(channels, output_path, max_response_time=float('inf'),
         logging.error(f"生成 TXT 文件时出错: {e}")
 
 async def main():
+    # 配置文件路径
     subscribe_file = 'config/subscribe.txt'
     output_m3u = 'output/result.m3u'
     output_txt = 'output/result.txt'
@@ -260,5 +265,4 @@ async def main():
                       include_groups=include_groups, include_channels=include_channels)
 
 if __name__ == '__main__':
-    asyncio.run(main())
-    
+    asyncio.run(main())    
