@@ -13,7 +13,7 @@ requests = "*"
 toml = "==0.10.2"
 pipenv = "*"
 m3u8 = "*"
-aiohttp = "*"  # 添加 aiohttp 模块依赖
+aiohttp = "*"
 
 [requires]
 python_version = "3.13"    
