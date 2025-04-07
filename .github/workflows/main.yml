@@ -33,6 +33,7 @@ jobs:
           else
             echo "Pipfile not found."
             exit 1
+          fi  # 这里添加了缺少的 fi
 
       - name: Install pipenv
         run: pip install pipenv
@@ -50,6 +51,7 @@ jobs:
           else
             echo "Script file your_script.py not found."
             exit 1
+          fi  # 这里也添加了缺少的 fi
 
       - name: Commit and push changes
         run: |
