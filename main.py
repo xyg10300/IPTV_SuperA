@@ -20,6 +20,16 @@ def read_subscribe_file(file_path):
         return []
 
 
+# 读取 generate.txt 文件中的关键词
+def read_generate_file(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return [line.strip() for line in f if line.strip()]
+    except FileNotFoundError:
+        logging.error(f"未找到 generate 文件: {file_path}")
+        return []
+
+
 # 异步获取 URL 内容并测试响应时间
 async def fetch_url(session, url):
     start_time = time.time()
@@ -106,7 +116,7 @@ def merge_and_deduplicate(channels_list):
     return unique_channels
 
 
-# 测试每个频道的响应时间，显示实时响应时间
+# 测试每个频道的响应时间
 async def test_channel_response_time(session, channel):
     start_time = time.time()
     try:
@@ -114,10 +124,20 @@ async def test_channel_response_time(session, channel):
             if response.status == 200:
                 elapsed_time = time.time() - start_time
                 channel['response_time'] = elapsed_time
-                logging.info(f"频道 {channel['name']} 的响应时间: {elapsed_time:.2f} 秒")
     except Exception as e:
         logging.error(f"测试 {channel['url']} 响应时间时发生错误: {e}")
     return channel
+
+
+# 筛选与 generate.txt 中关键词相关的频道
+def filter_channels(channels, keywords):
+    filtered_channels = []
+    for channel in channels:
+        for keyword in keywords:
+            if keyword in channel['name'] or (channel['group_title'] and keyword in channel['group_title']):
+                filtered_channels.append(channel)
+                break
+    return filtered_channels
 
 
 # 生成 M3U 文件，增加 EPG 回放支持
@@ -156,6 +176,7 @@ def generate_txt_file(channels, output_path):
 
 async def main():
     subscribe_file = 'config/subscribe.txt'
+    generate_file = 'config/generate.txt'
     output_m3u = 'output/result.m3u'
     output_txt = 'output/result.txt'
 
@@ -168,6 +189,12 @@ async def main():
     urls = read_subscribe_file(subscribe_file)
     if not urls:
         logging.error("订阅文件中没有有效的 URL。")
+        return
+
+    # 读取 generate.txt 文件
+    keywords = read_generate_file(generate_file)
+    if not keywords:
+        logging.error("generate 文件中没有有效的关键词。")
         return
 
     # 异步获取所有 URL 的内容
@@ -187,14 +214,21 @@ async def main():
     # 合并并去重频道
     unique_channels = merge_and_deduplicate(all_channels)
 
+    # 筛选与关键词相关的频道
+    filtered_channels = filter_channels(unique_channels, keywords)
+
+    if not filtered_channels:
+        logging.warning("未找到与关键词相关的频道。")
+        return
+
     # 测试每个频道的响应时间
     async with aiohttp.ClientSession() as session:
-        tasks = [test_channel_response_time(session, channel) for channel in unique_channels]
-        unique_channels = await asyncio.gather(*tasks)
+        tasks = [test_channel_response_time(session, channel) for channel in filtered_channels]
+        filtered_channels = await asyncio.gather(*tasks)
 
     # 生成 M3U 和 TXT 文件
-    generate_m3u_file(unique_channels, output_m3u)
-    generate_txt_file(unique_channels, output_txt)
+    generate_m3u_file(filtered_channels, output_m3u)
+    generate_txt_file(filtered_channels, output_txt)
 
     logging.info("成功生成 M3U 和 TXT 文件。")
 
