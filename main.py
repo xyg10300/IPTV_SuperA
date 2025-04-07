@@ -3,6 +3,7 @@ import aiohttp
 import logging
 import os
 from collections import OrderedDict
+import re
 
 # 配置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -41,11 +42,22 @@ def parse_m3u_content(content):
         if line.startswith('#EXTINF:'):
             info = line.split(',', 1)
             if len(info) == 2:
+                metadata = info[0]
                 name = info[1]
+                tvg_id = re.search(r'tvg-id="([^"]+)"', metadata)
+                tvg_name = re.search(r'tvg-name="([^"]+)"', metadata)
+                group_title = re.search(r'group-title="([^"]+)"', metadata)
                 i += 1
                 if i < len(lines):
                     url = lines[i].strip()
-                    channels.append((name, url))
+                    channel = {
+                        'name': name,
+                        'url': url,
+                        'tvg_id': tvg_id.group(1) if tvg_id else None,
+                        'tvg_name': tvg_name.group(1) if tvg_name else None,
+                        'group_title': group_title.group(1) if group_title else None
+                    }
+                    channels.append(channel)
         i += 1
     return channels
 
@@ -53,19 +65,24 @@ def parse_m3u_content(content):
 # 解析 TXT 格式内容
 def parse_txt_content(content):
     channels = []
-    genre = None
+    current_group = None
     lines = content.splitlines()
     for line in lines:
         line = line.strip()
         if line.endswith('#genre#'):
-            genre = line.replace('#genre#', '').strip()
+            current_group = line.replace('#genre#', '').strip()
         elif line:
             parts = line.split(',', 1)
             if len(parts) == 2:
                 name, url = parts
-                if genre:
-                    name = f"{genre}-{name}"
-                channels.append((name, url))
+                channel = {
+                    'name': name,
+                    'url': url,
+                    'tvg_id': None,
+                    'tvg_name': None,
+                    'group_title': current_group
+                }
+                channels.append(channel)
     return channels
 
 
@@ -74,7 +91,12 @@ def merge_and_deduplicate(channels_list):
     all_channels = []
     for channels in channels_list:
         all_channels.extend(channels)
-    unique_channels = list(OrderedDict(all_channels).items())
+    unique_channels = []
+    url_set = set()
+    for channel in all_channels:
+        if channel['url'] not in url_set:
+            unique_channels.append(channel)
+            url_set.add(channel['url'])
     return unique_channels
 
 
@@ -82,22 +104,30 @@ def merge_and_deduplicate(channels_list):
 def generate_m3u_file(channels, output_path):
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
-        for name, url in channels:
-            f.write(f'#EXTINF:-1,{name}\n')
-            f.write(f'{url}\n')
+        for channel in channels:
+            metadata = '#EXTINF:-1'
+            if channel['tvg_id']:
+                metadata += f' tvg-id="{channel["tvg_id"]}"'
+            if channel['tvg_name']:
+                metadata += f' tvg-name="{channel["tvg_name"]}"'
+            if channel['group_title']:
+                metadata += f' group-title="{channel["group_title"]}"'
+            f.write(f'{metadata},{channel["name"]}\n')
+            f.write(f'{channel["url"]}\n')
 
 
 # 生成 TXT 文件
 def generate_txt_file(channels, output_path):
     with open(output_path, 'w', encoding='utf-8') as f:
-        for name, url in channels:
-            parts = name.split('-', 1)
-            if len(parts) == 2:
-                genre, name = parts
-                f.write(f'{genre},#genre#\n')
-                f.write(f'{name},{url}\n')
-            else:
-                f.write(f'{name},{url}\n')
+        current_group = None
+        for channel in channels:
+            group_title = channel['group_title']
+            if group_title and group_title != current_group:
+                if current_group is not None:
+                    f.write('\n')
+                f.write(f'{group_title},#genre#\n')
+                current_group = group_title
+            f.write(f'{channel["name"]},{channel["url"]}\n')
 
 
 async def main():
