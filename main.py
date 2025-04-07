@@ -20,6 +20,16 @@ def read_subscribe_file(file_path):
         return []
 
 
+# 读取包含想保留的组名或频道的文件
+def read_include_list_file(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return [line.strip() for line in f if line.strip()]
+    except FileNotFoundError:
+        logging.error(f"未找到包含列表文件: {file_path}")
+        return []
+
+
 # 异步获取 URL 内容并测试响应时间
 async def fetch_url(session, url):
     start_time = time.time()
@@ -119,6 +129,18 @@ async def test_channel_response_time(session, channel):
     return channel
 
 
+# 过滤出包含在 include_list 中的频道
+def filter_channels(channels, include_list):
+    filtered_channels = []
+    for channel in channels:
+        group_title = channel['group_title'] or ''
+        name = channel['name']
+        # 如果组名或频道名在 include_list 中，则保留该频道
+        if group_title in include_list or name in include_list:
+            filtered_channels.append(channel)
+    return filtered_channels
+
+
 # 生成 M3U 文件，增加 EPG 回放支持
 def generate_m3u_file(channels, output_path, replay_days=7, custom_sort_order=None):
     # 按分组标题分组
@@ -194,6 +216,8 @@ async def main():
     subscribe_file = 'config/subscribe.txt'
     output_m3u = 'output/result.m3u'
     output_txt = 'output/result.txt'
+    # 包含想保留的组名或频道的文件
+    include_list_file = 'config/include_list.txt'
 
     # 自定义排序顺序
     custom_sort_order = ['🍄广东频道', '🍓央视频道', '🐧卫视频道', '🦄️港·澳·台', '🥝aktv', '直播']
@@ -208,6 +232,9 @@ async def main():
     if not urls:
         logging.error("订阅文件中没有有效的 URL。")
         return
+
+    # 读取包含列表文件
+    include_list = read_include_list_file(include_list_file)
 
     # 异步获取所有 URL 的内容
     async with aiohttp.ClientSession() as session:
@@ -231,9 +258,12 @@ async def main():
         tasks = [test_channel_response_time(session, channel) for channel in unique_channels]
         unique_channels = await asyncio.gather(*tasks)
 
+    # 过滤频道
+    filtered_channels = filter_channels(unique_channels, include_list)
+
     # 生成 M3U 和 TXT 文件
-    generate_m3u_file(unique_channels, output_m3u, custom_sort_order=custom_sort_order)
-    generate_txt_file(unique_channels, output_txt, custom_sort_order=custom_sort_order)
+    generate_m3u_file(filtered_channels, output_m3u, custom_sort_order=custom_sort_order)
+    generate_txt_file(filtered_channels, output_txt, custom_sort_order=custom_sort_order)
 
     logging.info("成功生成 M3U 和 TXT 文件。")
 
