@@ -1,235 +1,1141 @@
 #EXTM3U
-#EXTINF:-1 group-title="大湾区频道,",TVBS亚洲
-http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_5.m3u8?zshijd$IPV4•线路9&replay=1&days=7
-#EXTINF:-1 group-title="大湾区频道,",凤凰中文
-http://122.117.71.103:8574/http/61.222.53.250:8078/hls/21/80/phoenixch.m3u8$IPV4•线路43&replay=1&days=7
-#EXTINF:-1 group-title="卫视频道,",新疆卫视
-http://218.84.12.186:8001/hls/main/playlist.m3u8?zxinjd;http://218.84.12.186:8001/hls/main/playlist.m3u8zxinjd$IPV4•线路185&replay=1&days=7
-#EXTINF:-1 group-title="大湾区频道,",凤凰中文
-http://122.117.71.103:8574/http/61.222.53.250:8078/hls/21/80/phoenixch.m3u8$IPV4•线路94&replay=1&days=7
-#EXTINF:-1 group-title="大湾区频道,",TVBS亚洲
-http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_5.m3u8?zshijd$IPV4•线路20&replay=1&days=7
-#EXTINF:-1 group-title="卫视频道,",安徽卫视
-http://49.87.154.246:85/tsfile/live/0130_1.m3u8?key=txiptv$IPV4•线路392&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://120.77.205.62:8087/rtp/239.253.43.66:5146$IPV4•线路76&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路60&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路56&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://125.89.163.44:8888/udp/239.253.43.71:5146$IPV4•线路65&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路75&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路55&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://120.77.205.62:8087/rtp/239.253.43.66:5146$IPV4•线路61&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路47&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV11
-http://58.17.116.69:9903/tsfile/live/0011_2.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路442&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路74&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路24&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://qjrhc.jydjd.top:2911/udp/224.1.100.35:11111$IPV4•线路57&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://119.32.12.17:2901/udp/224.1.100.36:11111$IPV4•线路86&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://119.32.12.17:2901/udp/224.1.100.36:11111$IPV4•线路71&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路59&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路87&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://qjrhc.jydjd.top:2911/udp/224.1.100.35:11111$IPV4•线路72&replay=1&days=7
-#EXTINF:-1 group-title="大湾区频道,",無線新聞台
-https://v2hcdn.jdshipin.com/news/news.stream/chunklist_w105.m3u8$IPV4•线路10&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路18&replay=1&days=7
-#EXTINF:-1 group-title="大湾区频道,",新加坡中文
-https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_4.m3u8?zshijd$IPV4&replay=1&days=7
-#EXTINF:-1 group-title="卫视频道,",湖南卫视
-http://antvlive.ab5c6921.cdnviet.com/antv/playlist.m3u8$IPV4•线路81&replay=1&days=7
-#EXTINF:-1 group-title="少儿频道,",动漫秀场
-http://vapi.91kds.cc/live1/jdtv2.m3u8?id=dmxchd&apiKey=73c963d13814ce7d0e4743c5e7d033cc$IPV4•线路13&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路50&replay=1&days=7
-#EXTINF:-1 group-title="大湾区频道,",無線新聞台
-https://cdn9.163189.xyz/smt3.1.1.php?id=inews_twn$IPV4•线路6&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路42&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路66&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV1
-http://58.243.224.244:9901/tsfile/live/1031_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路16&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV4
-http://home.yulei.online:9999/rtp/226.0.2.156:9160$IPV4•线路347&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路37&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV4
-http://114.252.236.205:8000/rtp/239.3.1.105:8092$IPV4•线路261&replay=1&days=7
-#EXTINF:-1 group-title="大湾区频道,",無線新聞台
-http://cdn.iptv8k.top/dl/jspd.php?id=2$IPV4•线路11&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://125.89.163.44:8888/udp/239.253.43.71:5146$IPV4•线路80&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路81&replay=1&days=7
-#EXTINF:-1 group-title="卫视频道,",浙江卫视
-http://ali-vl.cztv.com/channels/lantian/channel001/360p.m3u8$IPV4•线路94&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路58&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路90&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路73&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广东民生
-http://14.212.185.146:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路2&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路21&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路49&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路16&replay=1&days=7
-#EXTINF:-1 group-title="大湾区频道,",TVBS新闻
-http://122.117.71.103:8543/http/61.222.53.250:8081/hls/75/817/ch59.m3u8$IPV4•线路4&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV1
-http://183.215.134.239:19901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路21&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路27&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路41&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV1
-http://59.39.89.130:60901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路268&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV1
-http://nas.hssvm.com:8888/udp/225.1.1.120:5002$IPV4•线路711&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州影视频道
-https://tencentplaygsm.gztv.com/live/yingshi.m3u8?txTime=65797d58&txSecret=6fee6e4ead49f4ccfb8113f0a580acb3$IPV4•线路11&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV1
-http://nas.hssvm.com:8888/udp/225.1.1.120:5002$IPV4•线路264&replay=1&days=7
-#EXTINF:-1 group-title="卫视频道,",广东卫视
-http://120.234.5.28:6000/udp/239.20.0.101:2000$IPV4•线路149&replay=1&days=7
-#EXTINF:-1 group-title="大湾区频道,",TVBS新闻
-http://122.117.71.103:8543/http/61.222.53.250:8081/hls/75/817/ch59.m3u8$IPV4•线路51&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV1
-http://221.226.4.10:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路156&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州综合
-http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路38&replay=1&days=7
-#EXTINF:-1 group-title="更新日期,",2025-04-07
-https://gitee.com/IIII-9306/PAV/raw/master/Updatetime.mp4&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV1
-http://1.183.54.201:9003//hls/1/index.m3u8$IPV4•线路585&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV1
-http://110.7.131.40:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路188&replay=1&days=7
-#EXTINF:-1 group-title="大湾区频道,",凤凰资讯
-http://122.117.71.103:8573/http/61.222.53.250:8081/hls/75/817/ch59.m3u8$IPV4•线路43&replay=1&days=7
-#EXTINF:-1 group-title="大湾区频道,",翡翠台
-http://grandprix2023.asuscomm.com:8889/bysid/1.m3u8$IPV4•线路12&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广东珠江
-https://pixman.mytvsuper.com.mp/Smart.php?id=zhujiang$IPV4•线路79&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV1
-http://60.223.224.176:8888/newlive/live/hls/2/live.m3u8?$IPV4•线路669&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV1
-http://120.76.248.139/live/bfgd/4200000484.m3u8$IPV4•线路131&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV1
-http://39.164.180.36:19901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路9&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV1
-http://110.7.131.146:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路187&replay=1&days=7
-#EXTINF:-1 group-title="卫视频道,",广东卫视
-http://107.174.52.32/itv.php?id=%e5%b9%bf%e4%b8%9c%e5%8d%ab%e8%a7%86$IPV4•线路26&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV1
-http://dms.yryyj.site:8188/udp/239.76.246.151:1234$IPV4•线路71&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV10
-http://183.223.157.123:85/tsfile/live/0010_1.m3u8?key=txiptv$IPV4•线路514&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV3
-http://222.134.19.31:352/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路212&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV1
-http://60.7.56.33:4000/udp/239.253.92.83:8012$IPV4•线路270&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广东民生
-http://14.212.185.146:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路11&replay=1&days=7
-#EXTINF:-1 group-title="卫视频道,",厦门卫视
-http://stream.jinjiang.tv/1/sd/live.m3u8?zfud$IPV4•线路8&replay=1&days=7
-#EXTINF:-1 group-title="大湾区频道,",东森综合
-http://122.117.71.103:8523/东森综合.m3u8$IPV4•线路3&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV3
-http://61.133.10.250:352/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路203&replay=1&days=7
-#EXTINF:-1 group-title="卫视频道,",厦门卫视
-http://stream.jinjiang.tv/1/sd/live.m3u8?zfud$IPV4•线路76&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV4
-http://home.yulei.online:9999/rtp/226.0.2.156:9160$IPV4•线路753&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV1
-http://61.134.255.246:9003//hls/1/index.m3u8$IPV4•线路623&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV1
-http://180.158.201.25:1024/udp/239.45.3.145:5140$IPV4•线路631&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV5
-http://omnix.cn:4000/udp/225.1.8.89:8000$IPV4•线路264&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV4
-https://www.nettvpro.xyz/player/videojs.php?url=http://117.161.12.116/live/program/live/cctv4hd8m/8000000/mnf.m3u8$IPV4•线路424&replay=1&days=7
-#EXTINF:-1 group-title="大湾区频道,",凤凰资讯
-http://108.181.20.197/livehttpplay?channel_id=30015$IPV4•线路147&replay=1&days=7
-#EXTINF:-1 group-title="大湾区频道,",凤凰香港
-http://zhibo.hkstv.tv/livestream/mutfysrq/playlist.m3u8?wsSession=e5b4ef626c5980be2fbdf2e7-158332927312639&amp;wsIPSercert=6f8d45434604e7d22f5b0abbc0231d01&amp;wsMonitor=0$IPV4•线路22&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广东珠江
-http://121.11.160.7:9901/tsfile/live/0018_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路49&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",广州新闻
-http://qjrhc.jydjd.top:2911/udp/224.1.100.38:11111$IPV4•线路11&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV9
-http://504099760.qicp.vip:9901/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路703&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",大湾区卫视
-http://150.158.112.123/%E5%85%AC%E4%BC%97%E5%8F%B7~%E7%8E%89%E7%8E%89%E8%BD%AF%E4%BB%B6%E5%BA%93/mg.php?id=dwqws$IPV4•线路93&replay=1&days=7
-#EXTINF:-1 group-title="广东频道,",大湾区卫视
-http://150.158.112.123/%E5%85%AC%E4%BC%97%E5%8F%B7~%E7%8E%89%E7%8E%89%E8%BD%AF%E4%BB%B6%E5%BA%93/mg.php?id=dwqws$IPV4•线路14&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV9
-https://www.nettvpro.xyz/player/videojs.php?url=http://123.184.28.3/hlslive-tx-cdn.ysp.cctv.cn/012/2024078603.m3u8$IPV4•线路401&replay=1&days=7
-#EXTINF:-1 group-title="大湾区频道,",翡翠台
-https://aktv.top/AKTV/live/aktv/null-16/AKTV.m3u8$IPV4•线路46&replay=1&days=7
-#EXTINF:-1 group-title="大湾区频道,",娛樂新聞台(HK)
-https://lb-mvtv-live.v2h-cdn.com/redirect/enew/enew.stream?type=m3u8$IPV4•线路5&replay=1&days=7
-#EXTINF:-1 group-title="大湾区频道,",有线新闻
-http://61.10.2.146/live_freedirect/freehd209_h.live/playlist.m3u8$IPV4•线路3&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV1
-http://116.117.104.34:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路181&replay=1&days=7
-#EXTINF:-1 group-title="大湾区频道,",AMC電影台
-http://zb.qc.to/?id=4gtv-4gtv017$IPV4•线路5&replay=1&days=7
-#EXTINF:-1 group-title="少儿频道,",动漫秀场
-http://36.129.204.117:9003//hls/67/index.m3u8$IPV4•线路10&replay=1&days=7
-#EXTINF:-1 group-title="大湾区频道,",三立新闻
-http://122.117.71.103:8542/http/61.222.53.250:8081/hls/75/817/ch59.m3u8$IPV4•线路5&replay=1&days=7
-#EXTINF:-1 group-title="大湾区频道,",有线新闻
-http://61.10.2.141:80/live_freedirect/freehd209_h.live/chunklist.m3u8$IPV4•线路4&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV11
-http://119.163.60.181:9901/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路17&replay=1&days=7
-#EXTINF:-1 group-title="卫视频道,",河北卫视
-http://60.8.49.38:352/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路16&replay=1&days=7
-#EXTINF:-1 group-title="卫视频道,",深圳卫视
-http://504099760.qicp.vip:9901/tsfile/live/0126_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路469&replay=1&days=7
-#EXTINF:-1 group-title="卫视频道,",广东卫视
-http://120.234.5.28:6000/udp/239.20.0.101:2000$IPV4•线路444&replay=1&days=7
-#EXTINF:-1 group-title="卫视频道,",东南卫视
-http://219.145.59.166:8888/tsfile/live/1040_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路325&replay=1&days=7
-#EXTINF:-1 group-title="卫视频道,",新疆卫视
-http://113.195.7.56:9901/tsfile/live/0110_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路207&replay=1&days=7
-#EXTINF:-1 group-title="卫视频道,",山东卫视
-http://l.cztvcloud.com/channels/lantian/SXshengzhou1/720p.m3u8$IPV4•线路18&replay=1&days=7
-#EXTINF:-1 group-title="卫视频道,",山东卫视
-http://39.150.96.141:65535/tsfile/live/0131_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路67&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV13
-http://183.131.246.250:9901/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路458&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV13
-http://116.128.243.121:85/tsfile/live/0013_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路602&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV12
-http://219.145.59.166:8888/tsfile/live/1022_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路472&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV4
-http://61.136.67.238:50085/tsfile/live/0004_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路645&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV4
-http://110.7.131.231:9901/tsfile/live/0004_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路669&replay=1&days=7
-#EXTINF:-1 group-title="卫视频道,",河北卫视
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看3天)
+http://61.10.2.140:80/live_freedirect/freehd209_h.live/chunklist_w135209556.m3u8$IPV4•线路6&replay=1&days=3
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看4天)
+http://61.10.2.140:80/live_freedirect/freehd209_h.live/chunklist_w135209556.m3u8$IPV4•线路6&replay=1&days=4
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看5天)
+http://61.10.2.140:80/live_freedirect/freehd209_h.live/chunklist_w135209556.m3u8$IPV4•线路6&replay=1&days=5
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看6天)
+http://61.10.2.140:80/live_freedirect/freehd209_h.live/chunklist_w135209556.m3u8$IPV4•线路6&replay=1&days=6
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看7天)
+http://61.10.2.140:80/live_freedirect/freehd209_h.live/chunklist_w135209556.m3u8$IPV4•线路6&replay=1&days=7
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看3天)
+http://61.10.2.134:80/live_freedirect/freehd209_h.live/chunklist.m3u8$IPV4•线路7&replay=1&days=3
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看4天)
+http://61.10.2.134:80/live_freedirect/freehd209_h.live/chunklist.m3u8$IPV4•线路7&replay=1&days=4
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看5天)
+http://61.10.2.134:80/live_freedirect/freehd209_h.live/chunklist.m3u8$IPV4•线路7&replay=1&days=5
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看6天)
+http://61.10.2.134:80/live_freedirect/freehd209_h.live/chunklist.m3u8$IPV4•线路7&replay=1&days=6
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看7天)
+http://61.10.2.134:80/live_freedirect/freehd209_h.live/chunklist.m3u8$IPV4•线路7&replay=1&days=7
+#EXTINF:-1 group-title="少儿频道,",金鹰卡通 (回看3天)
+http://112.99.193.34:9901/tsfile/live/1034_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0$IPV4•线路132&replay=1&days=3
+#EXTINF:-1 group-title="少儿频道,",金鹰卡通 (回看4天)
+http://112.99.193.34:9901/tsfile/live/1034_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0$IPV4•线路132&replay=1&days=4
+#EXTINF:-1 group-title="少儿频道,",金鹰卡通 (回看5天)
+http://112.99.193.34:9901/tsfile/live/1034_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0$IPV4•线路132&replay=1&days=5
+#EXTINF:-1 group-title="少儿频道,",金鹰卡通 (回看6天)
+http://112.99.193.34:9901/tsfile/live/1034_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0$IPV4•线路132&replay=1&days=6
+#EXTINF:-1 group-title="少儿频道,",金鹰卡通 (回看7天)
+http://112.99.193.34:9901/tsfile/live/1034_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0$IPV4•线路132&replay=1&days=7
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看3天)
+http://beishan008.asuscomm.com:8891/bysid/78.m3u8$IPV4•线路13&replay=1&days=3
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看4天)
+http://beishan008.asuscomm.com:8891/bysid/78.m3u8$IPV4•线路13&replay=1&days=4
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看5天)
+http://beishan008.asuscomm.com:8891/bysid/78.m3u8$IPV4•线路13&replay=1&days=5
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看6天)
+http://beishan008.asuscomm.com:8891/bysid/78.m3u8$IPV4•线路13&replay=1&days=6
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看7天)
+http://beishan008.asuscomm.com:8891/bysid/78.m3u8$IPV4•线路13&replay=1&days=7
+#EXTINF:-1 group-title="大湾区频道,",东森超视 (回看3天)
+http://122.117.71.103:8524/东森超视.m3u8$IPV4•线路4&replay=1&days=3
+#EXTINF:-1 group-title="大湾区频道,",东森超视 (回看4天)
+http://122.117.71.103:8524/东森超视.m3u8$IPV4•线路4&replay=1&days=4
+#EXTINF:-1 group-title="大湾区频道,",东森超视 (回看5天)
+http://122.117.71.103:8524/东森超视.m3u8$IPV4•线路4&replay=1&days=5
+#EXTINF:-1 group-title="大湾区频道,",东森超视 (回看6天)
+http://122.117.71.103:8524/东森超视.m3u8$IPV4•线路4&replay=1&days=6
+#EXTINF:-1 group-title="大湾区频道,",东森超视 (回看7天)
+http://122.117.71.103:8524/东森超视.m3u8$IPV4•线路4&replay=1&days=7
+#EXTINF:-1 group-title="大湾区频道,",翡翠台 (回看3天)
+http://aktv-stream.m16tv.cfd/stream/aktv/null/AKTV.m3u8$IPV4•线路15&replay=1&days=3
+#EXTINF:-1 group-title="大湾区频道,",翡翠台 (回看4天)
+http://aktv-stream.m16tv.cfd/stream/aktv/null/AKTV.m3u8$IPV4•线路15&replay=1&days=4
+#EXTINF:-1 group-title="大湾区频道,",翡翠台 (回看5天)
+http://aktv-stream.m16tv.cfd/stream/aktv/null/AKTV.m3u8$IPV4•线路15&replay=1&days=5
+#EXTINF:-1 group-title="大湾区频道,",翡翠台 (回看6天)
+http://aktv-stream.m16tv.cfd/stream/aktv/null/AKTV.m3u8$IPV4•线路15&replay=1&days=6
+#EXTINF:-1 group-title="大湾区频道,",翡翠台 (回看7天)
+http://aktv-stream.m16tv.cfd/stream/aktv/null/AKTV.m3u8$IPV4•线路15&replay=1&days=7
+#EXTINF:-1 group-title="卫视频道,",河北卫视 (回看3天)
+http://116.131.190.210:352/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路15&replay=1&days=3
+#EXTINF:-1 group-title="卫视频道,",河北卫视 (回看4天)
+http://116.131.190.210:352/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路15&replay=1&days=4
+#EXTINF:-1 group-title="卫视频道,",河北卫视 (回看5天)
+http://116.131.190.210:352/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路15&replay=1&days=5
+#EXTINF:-1 group-title="卫视频道,",河北卫视 (回看6天)
+http://116.131.190.210:352/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路15&replay=1&days=6
+#EXTINF:-1 group-title="卫视频道,",河北卫视 (回看7天)
 http://116.131.190.210:352/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路15&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV7
-http://218.13.14.6:60050/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路134&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV4
-http://116.117.107.84:9901/tsfile/live/0004_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路667&replay=1&days=7
-#EXTINF:-1 group-title="央视频道,",CCTV4
-http://dms.yryyj.site:8188/udp/239.76.246.154:1234$IPV4•线路682&replay=1&days=7
+#EXTINF:-1 group-title="卫视频道,",河北卫视 (回看3天)
+http://116.131.190.210:352/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路99&replay=1&days=3
+#EXTINF:-1 group-title="卫视频道,",河北卫视 (回看4天)
+http://116.131.190.210:352/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路99&replay=1&days=4
+#EXTINF:-1 group-title="卫视频道,",河北卫视 (回看5天)
+http://116.131.190.210:352/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路99&replay=1&days=5
+#EXTINF:-1 group-title="卫视频道,",河北卫视 (回看6天)
+http://116.131.190.210:352/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路99&replay=1&days=6
+#EXTINF:-1 group-title="卫视频道,",河北卫视 (回看7天)
+http://116.131.190.210:352/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路99&replay=1&days=7
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看3天)
+http://116.117.104.68:8096/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路371&replay=1&days=3
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看4天)
+http://116.117.104.68:8096/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路371&replay=1&days=4
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看5天)
+http://116.117.104.68:8096/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路371&replay=1&days=5
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看6天)
+http://116.117.104.68:8096/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路371&replay=1&days=6
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看7天)
+http://116.117.104.68:8096/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路371&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://120.77.205.62:8087/rtp/239.253.43.66:5146$IPV4•线路76&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://120.77.205.62:8087/rtp/239.253.43.66:5146$IPV4•线路76&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://120.77.205.62:8087/rtp/239.253.43.66:5146$IPV4•线路76&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://120.77.205.62:8087/rtp/239.253.43.66:5146$IPV4•线路76&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://120.77.205.62:8087/rtp/239.253.43.66:5146$IPV4•线路76&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路75&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路75&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路75&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路75&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路75&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路60&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路60&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路60&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路60&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路60&replay=1&days=7
+#EXTINF:-1 group-title="大湾区频道,",三立新闻 (回看3天)
+http://122.117.71.103:8542/http/61.222.53.250:8081/hls/75/817/ch59.m3u8$IPV4•线路5&replay=1&days=3
+#EXTINF:-1 group-title="大湾区频道,",三立新闻 (回看4天)
+http://122.117.71.103:8542/http/61.222.53.250:8081/hls/75/817/ch59.m3u8$IPV4•线路5&replay=1&days=4
+#EXTINF:-1 group-title="大湾区频道,",三立新闻 (回看5天)
+http://122.117.71.103:8542/http/61.222.53.250:8081/hls/75/817/ch59.m3u8$IPV4•线路5&replay=1&days=5
+#EXTINF:-1 group-title="大湾区频道,",三立新闻 (回看6天)
+http://122.117.71.103:8542/http/61.222.53.250:8081/hls/75/817/ch59.m3u8$IPV4•线路5&replay=1&days=6
+#EXTINF:-1 group-title="大湾区频道,",三立新闻 (回看7天)
+http://122.117.71.103:8542/http/61.222.53.250:8081/hls/75/817/ch59.m3u8$IPV4•线路5&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路47&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路47&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路47&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路47&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路47&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路55&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路55&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路55&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路55&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路55&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://120.77.205.62:8087/rtp/239.253.43.66:5146$IPV4•线路61&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://120.77.205.62:8087/rtp/239.253.43.66:5146$IPV4•线路61&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://120.77.205.62:8087/rtp/239.253.43.66:5146$IPV4•线路61&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://120.77.205.62:8087/rtp/239.253.43.66:5146$IPV4•线路61&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://120.77.205.62:8087/rtp/239.253.43.66:5146$IPV4•线路61&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路56&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路56&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路56&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路56&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://120.77.205.62:8087/rtp/239.253.43.71:5146$IPV4•线路56&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://119.32.12.17:2901/udp/224.1.100.36:11111$IPV4•线路71&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://119.32.12.17:2901/udp/224.1.100.36:11111$IPV4•线路71&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://119.32.12.17:2901/udp/224.1.100.36:11111$IPV4•线路71&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://119.32.12.17:2901/udp/224.1.100.36:11111$IPV4•线路71&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://119.32.12.17:2901/udp/224.1.100.36:11111$IPV4•线路71&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路74&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路74&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路74&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路74&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路74&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://119.32.12.17:2901/udp/224.1.100.36:11111$IPV4•线路86&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://119.32.12.17:2901/udp/224.1.100.36:11111$IPV4•线路86&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://119.32.12.17:2901/udp/224.1.100.36:11111$IPV4•线路86&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://119.32.12.17:2901/udp/224.1.100.36:11111$IPV4•线路86&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://119.32.12.17:2901/udp/224.1.100.36:11111$IPV4•线路86&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.35:11111$IPV4•线路72&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.35:11111$IPV4•线路72&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.35:11111$IPV4•线路72&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.35:11111$IPV4•线路72&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.35:11111$IPV4•线路72&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.35:11111$IPV4•线路57&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.35:11111$IPV4•线路57&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.35:11111$IPV4•线路57&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.35:11111$IPV4•线路57&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.35:11111$IPV4•线路57&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路87&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路87&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路87&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路87&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路87&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路24&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路24&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路24&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路24&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路24&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路18&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路18&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路18&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路18&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路18&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路59&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路59&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路59&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路59&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://qjrhc.jydjd.top:2911/udp/224.1.100.36:11111$IPV4•线路59&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://125.89.163.44:8888/udp/239.253.43.71:5146$IPV4•线路65&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://125.89.163.44:8888/udp/239.253.43.71:5146$IPV4•线路65&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://125.89.163.44:8888/udp/239.253.43.71:5146$IPV4•线路65&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://125.89.163.44:8888/udp/239.253.43.71:5146$IPV4•线路65&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://125.89.163.44:8888/udp/239.253.43.71:5146$IPV4•线路65&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://125.89.163.44:8888/udp/239.253.43.71:5146$IPV4•线路80&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://125.89.163.44:8888/udp/239.253.43.71:5146$IPV4•线路80&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://125.89.163.44:8888/udp/239.253.43.71:5146$IPV4•线路80&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://125.89.163.44:8888/udp/239.253.43.71:5146$IPV4•线路80&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://125.89.163.44:8888/udp/239.253.43.71:5146$IPV4•线路80&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看3天)
+http://60.2.190.206:4000/udp/239.253.92.83:8012$IPV4•线路651&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看4天)
+http://60.2.190.206:4000/udp/239.253.92.83:8012$IPV4•线路651&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看5天)
+http://60.2.190.206:4000/udp/239.253.92.83:8012$IPV4•线路651&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看6天)
+http://60.2.190.206:4000/udp/239.253.92.83:8012$IPV4•线路651&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看7天)
+http://60.2.190.206:4000/udp/239.253.92.83:8012$IPV4•线路651&replay=1&days=7
+#EXTINF:-1 group-title="大湾区频道,",龍華電影台 (回看3天)
+http://122.117.71.103:8555/http/61.222.53.250:8081/hls/75/817/ch59.m3u8$IPV4•线路6&replay=1&days=3
+#EXTINF:-1 group-title="大湾区频道,",龍華電影台 (回看4天)
+http://122.117.71.103:8555/http/61.222.53.250:8081/hls/75/817/ch59.m3u8$IPV4•线路6&replay=1&days=4
+#EXTINF:-1 group-title="大湾区频道,",龍華電影台 (回看5天)
+http://122.117.71.103:8555/http/61.222.53.250:8081/hls/75/817/ch59.m3u8$IPV4•线路6&replay=1&days=5
+#EXTINF:-1 group-title="大湾区频道,",龍華電影台 (回看6天)
+http://122.117.71.103:8555/http/61.222.53.250:8081/hls/75/817/ch59.m3u8$IPV4•线路6&replay=1&days=6
+#EXTINF:-1 group-title="大湾区频道,",龍華電影台 (回看7天)
+http://122.117.71.103:8555/http/61.222.53.250:8081/hls/75/817/ch59.m3u8$IPV4•线路6&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路81&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路81&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路81&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路81&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路81&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路50&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路50&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路50&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路50&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路50&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路66&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路66&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路66&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路66&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路66&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路15&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路15&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路15&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路15&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路15&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看3天)
+http://60.214.104.110:352/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路153&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看4天)
+http://60.214.104.110:352/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路153&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看5天)
+http://60.214.104.110:352/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路153&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看6天)
+http://60.214.104.110:352/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路153&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看7天)
+http://60.214.104.110:352/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路153&replay=1&days=7
+#EXTINF:-1 group-title="卫视频道,",内蒙古卫视 (回看3天)
+http://38827sf80aj6.vicp.fun:9901/tsfile/live/0109_1.m3u8?key=txiptv$IPV4•线路168&replay=1&days=3
+#EXTINF:-1 group-title="卫视频道,",内蒙古卫视 (回看4天)
+http://38827sf80aj6.vicp.fun:9901/tsfile/live/0109_1.m3u8?key=txiptv$IPV4•线路168&replay=1&days=4
+#EXTINF:-1 group-title="卫视频道,",内蒙古卫视 (回看5天)
+http://38827sf80aj6.vicp.fun:9901/tsfile/live/0109_1.m3u8?key=txiptv$IPV4•线路168&replay=1&days=5
+#EXTINF:-1 group-title="卫视频道,",内蒙古卫视 (回看6天)
+http://38827sf80aj6.vicp.fun:9901/tsfile/live/0109_1.m3u8?key=txiptv$IPV4•线路168&replay=1&days=6
+#EXTINF:-1 group-title="卫视频道,",内蒙古卫视 (回看7天)
+http://38827sf80aj6.vicp.fun:9901/tsfile/live/0109_1.m3u8?key=txiptv$IPV4•线路168&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路42&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路42&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路42&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路42&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路42&replay=1&days=7
+#EXTINF:-1 group-title="卫视频道,",浙江卫视 (回看3天)
+http://115.149.139.141:10000/tsfile/live/1024_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路404&replay=1&days=3
+#EXTINF:-1 group-title="卫视频道,",浙江卫视 (回看4天)
+http://115.149.139.141:10000/tsfile/live/1024_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路404&replay=1&days=4
+#EXTINF:-1 group-title="卫视频道,",浙江卫视 (回看5天)
+http://115.149.139.141:10000/tsfile/live/1024_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路404&replay=1&days=5
+#EXTINF:-1 group-title="卫视频道,",浙江卫视 (回看6天)
+http://115.149.139.141:10000/tsfile/live/1024_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路404&replay=1&days=6
+#EXTINF:-1 group-title="卫视频道,",浙江卫视 (回看7天)
+http://115.149.139.141:10000/tsfile/live/1024_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路404&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路37&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路37&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路37&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路37&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+https://tencentplaygsm.gztv.com/live/zonghes.m3u8?txTime=65797c44&amp;txSecret=7e4590b2320037d7ce49ce9eac2dd6c0$IPV4•线路37&replay=1&days=7
+#EXTINF:-1 group-title="更新日期,",2025-04-07 (回看3天)
+https://gitee.com/IIII-9306/PAV/raw/master/Updatetime.mp4&replay=1&days=3
+#EXTINF:-1 group-title="更新日期,",2025-04-07 (回看4天)
+https://gitee.com/IIII-9306/PAV/raw/master/Updatetime.mp4&replay=1&days=4
+#EXTINF:-1 group-title="更新日期,",2025-04-07 (回看5天)
+https://gitee.com/IIII-9306/PAV/raw/master/Updatetime.mp4&replay=1&days=5
+#EXTINF:-1 group-title="更新日期,",2025-04-07 (回看6天)
+https://gitee.com/IIII-9306/PAV/raw/master/Updatetime.mp4&replay=1&days=6
+#EXTINF:-1 group-title="更新日期,",2025-04-07 (回看7天)
+https://gitee.com/IIII-9306/PAV/raw/master/Updatetime.mp4&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看3天)
+http://wouu.net:9977/udp/239.93.0.184:5140$IPV4•线路178&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看4天)
+http://wouu.net:9977/udp/239.93.0.184:5140$IPV4•线路178&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看5天)
+http://wouu.net:9977/udp/239.93.0.184:5140$IPV4•线路178&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看6天)
+http://wouu.net:9977/udp/239.93.0.184:5140$IPV4•线路178&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看7天)
+http://wouu.net:9977/udp/239.93.0.184:5140$IPV4•线路178&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路16&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路16&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路16&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路16&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路16&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路27&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路27&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路27&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路27&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路27&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看3天)
+http://171.213.197.238:9977/udp/239.93.0.184:5140$IPV4•线路635&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看4天)
+http://171.213.197.238:9977/udp/239.93.0.184:5140$IPV4•线路635&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看5天)
+http://171.213.197.238:9977/udp/239.93.0.184:5140$IPV4•线路635&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看6天)
+http://171.213.197.238:9977/udp/239.93.0.184:5140$IPV4•线路635&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看7天)
+http://171.213.197.238:9977/udp/239.93.0.184:5140$IPV4•线路635&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路38&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路38&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路38&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路38&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路38&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路21&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路21&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路21&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路21&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路21&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路90&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路90&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路90&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路90&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路90&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路41&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路41&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路41&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路41&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路41&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看3天)
+http://60.172.130.146:352/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路121&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看4天)
+http://60.172.130.146:352/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路121&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看5天)
+http://60.172.130.146:352/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路121&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看6天)
+http://60.172.130.146:352/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路121&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看7天)
+http://60.172.130.146:352/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路121&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看3天)
+http://139.209.169.41:9003//hls/1/index.m3u8$IPV4•线路575&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看4天)
+http://139.209.169.41:9003//hls/1/index.m3u8$IPV4•线路575&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看5天)
+http://139.209.169.41:9003//hls/1/index.m3u8$IPV4•线路575&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看6天)
+http://139.209.169.41:9003//hls/1/index.m3u8$IPV4•线路575&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看7天)
+http://139.209.169.41:9003//hls/1/index.m3u8$IPV4•线路575&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路73&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路73&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路73&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路73&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路73&replay=1&days=7
+#EXTINF:-1 group-title="少儿频道,",动漫秀场 (回看3天)
+http://vapi.91kds.cc/live1/jdtv2.m3u8?id=dmxchd&apiKey=73c963d13814ce7d0e4743c5e7d033cc$IPV4•线路13&replay=1&days=3
+#EXTINF:-1 group-title="少儿频道,",动漫秀场 (回看4天)
+http://vapi.91kds.cc/live1/jdtv2.m3u8?id=dmxchd&apiKey=73c963d13814ce7d0e4743c5e7d033cc$IPV4•线路13&replay=1&days=4
+#EXTINF:-1 group-title="少儿频道,",动漫秀场 (回看5天)
+http://vapi.91kds.cc/live1/jdtv2.m3u8?id=dmxchd&apiKey=73c963d13814ce7d0e4743c5e7d033cc$IPV4•线路13&replay=1&days=5
+#EXTINF:-1 group-title="少儿频道,",动漫秀场 (回看6天)
+http://vapi.91kds.cc/live1/jdtv2.m3u8?id=dmxchd&apiKey=73c963d13814ce7d0e4743c5e7d033cc$IPV4•线路13&replay=1&days=6
+#EXTINF:-1 group-title="少儿频道,",动漫秀场 (回看7天)
+http://vapi.91kds.cc/live1/jdtv2.m3u8?id=dmxchd&apiKey=73c963d13814ce7d0e4743c5e7d033cc$IPV4•线路13&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路49&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路49&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路49&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路49&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路49&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广东珠江 (回看3天)
+http://121.33.239.242:9901/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路24&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广东珠江 (回看4天)
+http://121.33.239.242:9901/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路24&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广东珠江 (回看5天)
+http://121.33.239.242:9901/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路24&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广东珠江 (回看6天)
+http://121.33.239.242:9901/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路24&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广东珠江 (回看7天)
+http://121.33.239.242:9901/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路24&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州影视频道 (回看3天)
+https://tencentplaygsm.gztv.com/live/yingshi.m3u8?txTime=65797d58&txSecret=6fee6e4ead49f4ccfb8113f0a580acb3$IPV4•线路11&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州影视频道 (回看4天)
+https://tencentplaygsm.gztv.com/live/yingshi.m3u8?txTime=65797d58&txSecret=6fee6e4ead49f4ccfb8113f0a580acb3$IPV4•线路11&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州影视频道 (回看5天)
+https://tencentplaygsm.gztv.com/live/yingshi.m3u8?txTime=65797d58&txSecret=6fee6e4ead49f4ccfb8113f0a580acb3$IPV4•线路11&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州影视频道 (回看6天)
+https://tencentplaygsm.gztv.com/live/yingshi.m3u8?txTime=65797d58&txSecret=6fee6e4ead49f4ccfb8113f0a580acb3$IPV4•线路11&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州影视频道 (回看7天)
+https://tencentplaygsm.gztv.com/live/yingshi.m3u8?txTime=65797d58&txSecret=6fee6e4ead49f4ccfb8113f0a580acb3$IPV4•线路11&replay=1&days=7
+#EXTINF:-1 group-title="大湾区频道,",Viutv (回看3天)
+https://turkmedya-live.ercdn.net/tv360/tv360.m3u8$IPV4•线路8&replay=1&days=3
+#EXTINF:-1 group-title="大湾区频道,",Viutv (回看4天)
+https://turkmedya-live.ercdn.net/tv360/tv360.m3u8$IPV4•线路8&replay=1&days=4
+#EXTINF:-1 group-title="大湾区频道,",Viutv (回看5天)
+https://turkmedya-live.ercdn.net/tv360/tv360.m3u8$IPV4•线路8&replay=1&days=5
+#EXTINF:-1 group-title="大湾区频道,",Viutv (回看6天)
+https://turkmedya-live.ercdn.net/tv360/tv360.m3u8$IPV4•线路8&replay=1&days=6
+#EXTINF:-1 group-title="大湾区频道,",Viutv (回看7天)
+https://turkmedya-live.ercdn.net/tv360/tv360.m3u8$IPV4•线路8&replay=1&days=7
+#EXTINF:-1 group-title="大湾区频道,",Viutv (回看3天)
+https://turkmedya-live.ercdn.net/tv360/tv360.m3u8$IPV4•线路12&replay=1&days=3
+#EXTINF:-1 group-title="大湾区频道,",Viutv (回看4天)
+https://turkmedya-live.ercdn.net/tv360/tv360.m3u8$IPV4•线路12&replay=1&days=4
+#EXTINF:-1 group-title="大湾区频道,",Viutv (回看5天)
+https://turkmedya-live.ercdn.net/tv360/tv360.m3u8$IPV4•线路12&replay=1&days=5
+#EXTINF:-1 group-title="大湾区频道,",Viutv (回看6天)
+https://turkmedya-live.ercdn.net/tv360/tv360.m3u8$IPV4•线路12&replay=1&days=6
+#EXTINF:-1 group-title="大湾区频道,",Viutv (回看7天)
+https://turkmedya-live.ercdn.net/tv360/tv360.m3u8$IPV4•线路12&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV2 (回看3天)
+http://139.209.169.41:9003//hls/2/index.m3u8$IPV4•线路575&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV2 (回看4天)
+http://139.209.169.41:9003//hls/2/index.m3u8$IPV4•线路575&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV2 (回看5天)
+http://139.209.169.41:9003//hls/2/index.m3u8$IPV4•线路575&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV2 (回看6天)
+http://139.209.169.41:9003//hls/2/index.m3u8$IPV4•线路575&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV2 (回看7天)
+http://139.209.169.41:9003//hls/2/index.m3u8$IPV4•线路575&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV3 (回看3天)
+http://110.81.206.138:49231/tsfile/live/23003_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路617&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV3 (回看4天)
+http://110.81.206.138:49231/tsfile/live/23003_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路617&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV3 (回看5天)
+http://110.81.206.138:49231/tsfile/live/23003_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路617&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV3 (回看6天)
+http://110.81.206.138:49231/tsfile/live/23003_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路617&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV3 (回看7天)
+http://110.81.206.138:49231/tsfile/live/23003_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路617&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看3天)
+http://218.29.168.146:352/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路240&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看4天)
+http://218.29.168.146:352/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路240&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看5天)
+http://218.29.168.146:352/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路240&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看6天)
+http://218.29.168.146:352/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路240&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看7天)
+http://218.29.168.146:352/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路240&replay=1&days=7
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看3天)
+http://61.10.2.146/live_freedirect/freehd209_h.live/playlist.m3u8$IPV4•线路3&replay=1&days=3
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看4天)
+http://61.10.2.146/live_freedirect/freehd209_h.live/playlist.m3u8$IPV4•线路3&replay=1&days=4
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看5天)
+http://61.10.2.146/live_freedirect/freehd209_h.live/playlist.m3u8$IPV4•线路3&replay=1&days=5
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看6天)
+http://61.10.2.146/live_freedirect/freehd209_h.live/playlist.m3u8$IPV4•线路3&replay=1&days=6
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看7天)
+http://61.10.2.146/live_freedirect/freehd209_h.live/playlist.m3u8$IPV4•线路3&replay=1&days=7
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看3天)
+http://aktv_stream1.m16tv.cfd/stream/aktv3/null/AKTV.m3u8$IPV4•线路34&replay=1&days=3
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看4天)
+http://aktv_stream1.m16tv.cfd/stream/aktv3/null/AKTV.m3u8$IPV4•线路34&replay=1&days=4
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看5天)
+http://aktv_stream1.m16tv.cfd/stream/aktv3/null/AKTV.m3u8$IPV4•线路34&replay=1&days=5
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看6天)
+http://aktv_stream1.m16tv.cfd/stream/aktv3/null/AKTV.m3u8$IPV4•线路34&replay=1&days=6
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看7天)
+http://aktv_stream1.m16tv.cfd/stream/aktv3/null/AKTV.m3u8$IPV4•线路34&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广东体育 (回看3天)
+http://api2.52tb.xyz/info?id=413&token=20230218qkyjia$IPV4•线路51&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广东体育 (回看4天)
+http://api2.52tb.xyz/info?id=413&token=20230218qkyjia$IPV4•线路51&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广东体育 (回看5天)
+http://api2.52tb.xyz/info?id=413&token=20230218qkyjia$IPV4•线路51&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广东体育 (回看6天)
+http://api2.52tb.xyz/info?id=413&token=20230218qkyjia$IPV4•线路51&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广东体育 (回看7天)
+http://api2.52tb.xyz/info?id=413&token=20230218qkyjia$IPV4•线路51&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看3天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路58&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看4天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路58&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看5天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路58&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看6天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路58&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州综合 (回看7天)
+http://v4d.xiepeiru.top:1123/iptv/gq/GuangZhouZongHe$IPV4•线路58&replay=1&days=7
+#EXTINF:-1 group-title="卫视频道,",安徽卫视 (回看3天)
+http://223.241.247.214:85//tsfile/live/0019_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路165&replay=1&days=3
+#EXTINF:-1 group-title="卫视频道,",安徽卫视 (回看4天)
+http://223.241.247.214:85//tsfile/live/0019_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路165&replay=1&days=4
+#EXTINF:-1 group-title="卫视频道,",安徽卫视 (回看5天)
+http://223.241.247.214:85//tsfile/live/0019_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路165&replay=1&days=5
+#EXTINF:-1 group-title="卫视频道,",安徽卫视 (回看6天)
+http://223.241.247.214:85//tsfile/live/0019_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路165&replay=1&days=6
+#EXTINF:-1 group-title="卫视频道,",安徽卫视 (回看7天)
+http://223.241.247.214:85//tsfile/live/0019_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路165&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看3天)
+http://110.7.131.4:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路189&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看4天)
+http://110.7.131.4:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路189&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看5天)
+http://110.7.131.4:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路189&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看6天)
+http://110.7.131.4:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路189&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看7天)
+http://110.7.131.4:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路189&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看3天)
+http://113.57.93.165:9900/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路122&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看4天)
+http://113.57.93.165:9900/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路122&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看5天)
+http://113.57.93.165:9900/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路122&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看6天)
+http://113.57.93.165:9900/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路122&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看7天)
+http://113.57.93.165:9900/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路122&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看3天)
+http://123.130.84.106:8154/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路123&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看4天)
+http://123.130.84.106:8154/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路123&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看5天)
+http://123.130.84.106:8154/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路123&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看6天)
+http://123.130.84.106:8154/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路123&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看7天)
+http://123.130.84.106:8154/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路123&replay=1&days=7
+#EXTINF:-1 group-title="大湾区频道,",Viutv (回看3天)
+https://live.hkdvb.com/hls/live/99.m3u8?token=631170156112507&edge=live.tvfree.sbs$IPV4•线路21&replay=1&days=3
+#EXTINF:-1 group-title="大湾区频道,",Viutv (回看4天)
+https://live.hkdvb.com/hls/live/99.m3u8?token=631170156112507&edge=live.tvfree.sbs$IPV4•线路21&replay=1&days=4
+#EXTINF:-1 group-title="大湾区频道,",Viutv (回看5天)
+https://live.hkdvb.com/hls/live/99.m3u8?token=631170156112507&edge=live.tvfree.sbs$IPV4•线路21&replay=1&days=5
+#EXTINF:-1 group-title="大湾区频道,",Viutv (回看6天)
+https://live.hkdvb.com/hls/live/99.m3u8?token=631170156112507&edge=live.tvfree.sbs$IPV4•线路21&replay=1&days=6
+#EXTINF:-1 group-title="大湾区频道,",Viutv (回看7天)
+https://live.hkdvb.com/hls/live/99.m3u8?token=631170156112507&edge=live.tvfree.sbs$IPV4•线路21&replay=1&days=7
+#EXTINF:-1 group-title="大湾区频道,",Viutv (回看3天)
+https://live.hkdvb.com/hls/live/99.m3u8?token=631170156112507&edge=live.tvfree.sbs$IPV4•线路19&replay=1&days=3
+#EXTINF:-1 group-title="大湾区频道,",Viutv (回看4天)
+https://live.hkdvb.com/hls/live/99.m3u8?token=631170156112507&edge=live.tvfree.sbs$IPV4•线路19&replay=1&days=4
+#EXTINF:-1 group-title="大湾区频道,",Viutv (回看5天)
+https://live.hkdvb.com/hls/live/99.m3u8?token=631170156112507&edge=live.tvfree.sbs$IPV4•线路19&replay=1&days=5
+#EXTINF:-1 group-title="大湾区频道,",Viutv (回看6天)
+https://live.hkdvb.com/hls/live/99.m3u8?token=631170156112507&edge=live.tvfree.sbs$IPV4•线路19&replay=1&days=6
+#EXTINF:-1 group-title="大湾区频道,",Viutv (回看7天)
+https://live.hkdvb.com/hls/live/99.m3u8?token=631170156112507&edge=live.tvfree.sbs$IPV4•线路19&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV4 (回看3天)
+http://home.yulei.online:9999/rtp/226.0.2.156:9160$IPV4•线路347&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV4 (回看4天)
+http://home.yulei.online:9999/rtp/226.0.2.156:9160$IPV4•线路347&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV4 (回看5天)
+http://home.yulei.online:9999/rtp/226.0.2.156:9160$IPV4•线路347&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV4 (回看6天)
+http://home.yulei.online:9999/rtp/226.0.2.156:9160$IPV4•线路347&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV4 (回看7天)
+http://home.yulei.online:9999/rtp/226.0.2.156:9160$IPV4•线路347&replay=1&days=7
+#EXTINF:-1 group-title="大湾区频道,",中天新聞台 (回看3天)
+http://122.117.71.103:8540/http/220.130.87.218:8081/hls/78/80/ch063max.m3u8$IPV4•线路8&replay=1&days=3
+#EXTINF:-1 group-title="大湾区频道,",中天新聞台 (回看4天)
+http://122.117.71.103:8540/http/220.130.87.218:8081/hls/78/80/ch063max.m3u8$IPV4•线路8&replay=1&days=4
+#EXTINF:-1 group-title="大湾区频道,",中天新聞台 (回看5天)
+http://122.117.71.103:8540/http/220.130.87.218:8081/hls/78/80/ch063max.m3u8$IPV4•线路8&replay=1&days=5
+#EXTINF:-1 group-title="大湾区频道,",中天新聞台 (回看6天)
+http://122.117.71.103:8540/http/220.130.87.218:8081/hls/78/80/ch063max.m3u8$IPV4•线路8&replay=1&days=6
+#EXTINF:-1 group-title="大湾区频道,",中天新聞台 (回看7天)
+http://122.117.71.103:8540/http/220.130.87.218:8081/hls/78/80/ch063max.m3u8$IPV4•线路8&replay=1&days=7
+#EXTINF:-1 group-title="大湾区频道,",东森综合 (回看3天)
+http://122.117.71.103:8523/东森综合.m3u8$IPV4•线路3&replay=1&days=3
+#EXTINF:-1 group-title="大湾区频道,",东森综合 (回看4天)
+http://122.117.71.103:8523/东森综合.m3u8$IPV4•线路3&replay=1&days=4
+#EXTINF:-1 group-title="大湾区频道,",东森综合 (回看5天)
+http://122.117.71.103:8523/东森综合.m3u8$IPV4•线路3&replay=1&days=5
+#EXTINF:-1 group-title="大湾区频道,",东森综合 (回看6天)
+http://122.117.71.103:8523/东森综合.m3u8$IPV4•线路3&replay=1&days=6
+#EXTINF:-1 group-title="大湾区频道,",东森综合 (回看7天)
+http://122.117.71.103:8523/东森综合.m3u8$IPV4•线路3&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看3天)
+http://111.14.181.15:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路65&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看4天)
+http://111.14.181.15:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路65&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看5天)
+http://111.14.181.15:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路65&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看6天)
+http://111.14.181.15:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路65&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看7天)
+http://111.14.181.15:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路65&replay=1&days=7
+#EXTINF:-1 group-title="大湾区频道,",翡翠台 (回看3天)
+http://185.243.7.13:80/play/live.php?mac=00:1A:79:45:5E:9A&stream=941619&extension=ts&play_token=p2yEuU1aFS$IPV4•线路44&replay=1&days=3
+#EXTINF:-1 group-title="大湾区频道,",翡翠台 (回看4天)
+http://185.243.7.13:80/play/live.php?mac=00:1A:79:45:5E:9A&stream=941619&extension=ts&play_token=p2yEuU1aFS$IPV4•线路44&replay=1&days=4
+#EXTINF:-1 group-title="大湾区频道,",翡翠台 (回看5天)
+http://185.243.7.13:80/play/live.php?mac=00:1A:79:45:5E:9A&stream=941619&extension=ts&play_token=p2yEuU1aFS$IPV4•线路44&replay=1&days=5
+#EXTINF:-1 group-title="大湾区频道,",翡翠台 (回看6天)
+http://185.243.7.13:80/play/live.php?mac=00:1A:79:45:5E:9A&stream=941619&extension=ts&play_token=p2yEuU1aFS$IPV4•线路44&replay=1&days=6
+#EXTINF:-1 group-title="大湾区频道,",翡翠台 (回看7天)
+http://185.243.7.13:80/play/live.php?mac=00:1A:79:45:5E:9A&stream=941619&extension=ts&play_token=p2yEuU1aFS$IPV4•线路44&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV5 (回看3天)
+https://ldcctvwbcdks.v.kcdnvip.com/ldcctvwbcd/cdrmldcctv5plus_1/index.m3u8?b=200-2100$IPV4•线路441&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV5 (回看4天)
+https://ldcctvwbcdks.v.kcdnvip.com/ldcctvwbcd/cdrmldcctv5plus_1/index.m3u8?b=200-2100$IPV4•线路441&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV5 (回看5天)
+https://ldcctvwbcdks.v.kcdnvip.com/ldcctvwbcd/cdrmldcctv5plus_1/index.m3u8?b=200-2100$IPV4•线路441&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV5 (回看6天)
+https://ldcctvwbcdks.v.kcdnvip.com/ldcctvwbcd/cdrmldcctv5plus_1/index.m3u8?b=200-2100$IPV4•线路441&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV5 (回看7天)
+https://ldcctvwbcdks.v.kcdnvip.com/ldcctvwbcd/cdrmldcctv5plus_1/index.m3u8?b=200-2100$IPV4•线路441&replay=1&days=7
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看3天)
+http://115.149.139.141:10000/tsfile/live/1031_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路383&replay=1&days=3
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看4天)
+http://115.149.139.141:10000/tsfile/live/1031_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路383&replay=1&days=4
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看5天)
+http://115.149.139.141:10000/tsfile/live/1031_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路383&replay=1&days=5
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看6天)
+http://115.149.139.141:10000/tsfile/live/1031_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路383&replay=1&days=6
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看7天)
+http://115.149.139.141:10000/tsfile/live/1031_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路383&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看3天)
+http://120.234.5.29:6000/udp/239.20.0.104:2006$IPV4•线路66&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看4天)
+http://120.234.5.29:6000/udp/239.20.0.104:2006$IPV4•线路66&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看5天)
+http://120.234.5.29:6000/udp/239.20.0.104:2006$IPV4•线路66&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看6天)
+http://120.234.5.29:6000/udp/239.20.0.104:2006$IPV4•线路66&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看7天)
+http://120.234.5.29:6000/udp/239.20.0.104:2006$IPV4•线路66&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV12 (回看3天)
+http://219.145.59.166:8888/tsfile/live/1022_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路472&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV12 (回看4天)
+http://219.145.59.166:8888/tsfile/live/1022_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路472&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV12 (回看5天)
+http://219.145.59.166:8888/tsfile/live/1022_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路472&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV12 (回看6天)
+http://219.145.59.166:8888/tsfile/live/1022_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路472&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV12 (回看7天)
+http://219.145.59.166:8888/tsfile/live/1022_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路472&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV5 (回看3天)
+http://omnix.cn:4000/udp/225.1.8.89:8000$IPV4•线路264&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV5 (回看4天)
+http://omnix.cn:4000/udp/225.1.8.89:8000$IPV4•线路264&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV5 (回看5天)
+http://omnix.cn:4000/udp/225.1.8.89:8000$IPV4•线路264&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV5 (回看6天)
+http://omnix.cn:4000/udp/225.1.8.89:8000$IPV4•线路264&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV5 (回看7天)
+http://omnix.cn:4000/udp/225.1.8.89:8000$IPV4•线路264&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广东珠江 (回看3天)
+http://121.11.160.7:9901/tsfile/live/0018_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路49&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广东珠江 (回看4天)
+http://121.11.160.7:9901/tsfile/live/0018_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路49&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广东珠江 (回看5天)
+http://121.11.160.7:9901/tsfile/live/0018_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路49&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广东珠江 (回看6天)
+http://121.11.160.7:9901/tsfile/live/0018_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路49&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广东珠江 (回看7天)
+http://121.11.160.7:9901/tsfile/live/0018_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路49&replay=1&days=7
+#EXTINF:-1 group-title="大湾区频道,",AMC電影台 (回看3天)
+http://zb.qc.to/?id=4gtv-4gtv017$IPV4•线路5&replay=1&days=3
+#EXTINF:-1 group-title="大湾区频道,",AMC電影台 (回看4天)
+http://zb.qc.to/?id=4gtv-4gtv017$IPV4•线路5&replay=1&days=4
+#EXTINF:-1 group-title="大湾区频道,",AMC電影台 (回看5天)
+http://zb.qc.to/?id=4gtv-4gtv017$IPV4•线路5&replay=1&days=5
+#EXTINF:-1 group-title="大湾区频道,",AMC電影台 (回看6天)
+http://zb.qc.to/?id=4gtv-4gtv017$IPV4•线路5&replay=1&days=6
+#EXTINF:-1 group-title="大湾区频道,",AMC電影台 (回看7天)
+http://zb.qc.to/?id=4gtv-4gtv017$IPV4•线路5&replay=1&days=7
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看3天)
+http://p.ytelc.com/m3u8.html?id=http://cc-ynbit-wszhibo.ifengli.com:2000/live/shdfws-hd/2500.m3u8?innersid=6998114529464369318$IPV4•线路303&replay=1&days=3
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看4天)
+http://p.ytelc.com/m3u8.html?id=http://cc-ynbit-wszhibo.ifengli.com:2000/live/shdfws-hd/2500.m3u8?innersid=6998114529464369318$IPV4•线路303&replay=1&days=4
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看5天)
+http://p.ytelc.com/m3u8.html?id=http://cc-ynbit-wszhibo.ifengli.com:2000/live/shdfws-hd/2500.m3u8?innersid=6998114529464369318$IPV4•线路303&replay=1&days=5
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看6天)
+http://p.ytelc.com/m3u8.html?id=http://cc-ynbit-wszhibo.ifengli.com:2000/live/shdfws-hd/2500.m3u8?innersid=6998114529464369318$IPV4•线路303&replay=1&days=6
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看7天)
+http://p.ytelc.com/m3u8.html?id=http://cc-ynbit-wszhibo.ifengli.com:2000/live/shdfws-hd/2500.m3u8?innersid=6998114529464369318$IPV4•线路303&replay=1&days=7
+#EXTINF:-1 group-title="卫视频道,",青海卫视 (回看3天)
+http://stream.qhbtv.com/qhws/sd/live.m3u8?_upt=f35a89681647856030$IPV4•线路40&replay=1&days=3
+#EXTINF:-1 group-title="卫视频道,",青海卫视 (回看4天)
+http://stream.qhbtv.com/qhws/sd/live.m3u8?_upt=f35a89681647856030$IPV4•线路40&replay=1&days=4
+#EXTINF:-1 group-title="卫视频道,",青海卫视 (回看5天)
+http://stream.qhbtv.com/qhws/sd/live.m3u8?_upt=f35a89681647856030$IPV4•线路40&replay=1&days=5
+#EXTINF:-1 group-title="卫视频道,",青海卫视 (回看6天)
+http://stream.qhbtv.com/qhws/sd/live.m3u8?_upt=f35a89681647856030$IPV4•线路40&replay=1&days=6
+#EXTINF:-1 group-title="卫视频道,",青海卫视 (回看7天)
+http://stream.qhbtv.com/qhws/sd/live.m3u8?_upt=f35a89681647856030$IPV4•线路40&replay=1&days=7
+#EXTINF:-1 group-title="卫视频道,",安徽卫视 (回看3天)
+http://49.87.154.246:85/tsfile/live/0130_1.m3u8?key=txiptv$IPV4•线路392&replay=1&days=3
+#EXTINF:-1 group-title="卫视频道,",安徽卫视 (回看4天)
+http://49.87.154.246:85/tsfile/live/0130_1.m3u8?key=txiptv$IPV4•线路392&replay=1&days=4
+#EXTINF:-1 group-title="卫视频道,",安徽卫视 (回看5天)
+http://49.87.154.246:85/tsfile/live/0130_1.m3u8?key=txiptv$IPV4•线路392&replay=1&days=5
+#EXTINF:-1 group-title="卫视频道,",安徽卫视 (回看6天)
+http://49.87.154.246:85/tsfile/live/0130_1.m3u8?key=txiptv$IPV4•线路392&replay=1&days=6
+#EXTINF:-1 group-title="卫视频道,",安徽卫视 (回看7天)
+http://49.87.154.246:85/tsfile/live/0130_1.m3u8?key=txiptv$IPV4•线路392&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广州竞赛频道 (回看3天)
+https://tencentplaygsm.gztv.com/live/jingsai.m3u8?txTime=659e2559&amp;txSecret=067c1cd334fe2f8773d9452993e86c78$IPV4•线路9&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广州竞赛频道 (回看4天)
+https://tencentplaygsm.gztv.com/live/jingsai.m3u8?txTime=659e2559&amp;txSecret=067c1cd334fe2f8773d9452993e86c78$IPV4•线路9&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广州竞赛频道 (回看5天)
+https://tencentplaygsm.gztv.com/live/jingsai.m3u8?txTime=659e2559&amp;txSecret=067c1cd334fe2f8773d9452993e86c78$IPV4•线路9&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广州竞赛频道 (回看6天)
+https://tencentplaygsm.gztv.com/live/jingsai.m3u8?txTime=659e2559&amp;txSecret=067c1cd334fe2f8773d9452993e86c78$IPV4•线路9&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广州竞赛频道 (回看7天)
+https://tencentplaygsm.gztv.com/live/jingsai.m3u8?txTime=659e2559&amp;txSecret=067c1cd334fe2f8773d9452993e86c78$IPV4•线路9&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看3天)
+http://dl.wifi942.com:66/jsyd/jsyd.php?id=G_CCTV-1-HD-265-8M$IPV4•线路272&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看4天)
+http://dl.wifi942.com:66/jsyd/jsyd.php?id=G_CCTV-1-HD-265-8M$IPV4•线路272&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看5天)
+http://dl.wifi942.com:66/jsyd/jsyd.php?id=G_CCTV-1-HD-265-8M$IPV4•线路272&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看6天)
+http://dl.wifi942.com:66/jsyd/jsyd.php?id=G_CCTV-1-HD-265-8M$IPV4•线路272&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看7天)
+http://dl.wifi942.com:66/jsyd/jsyd.php?id=G_CCTV-1-HD-265-8M$IPV4•线路272&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看3天)
+http://183.215.134.239:19901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路21&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看4天)
+http://183.215.134.239:19901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路21&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看5天)
+http://183.215.134.239:19901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路21&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看6天)
+http://183.215.134.239:19901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路21&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看7天)
+http://183.215.134.239:19901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路21&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",大湾区卫视 (回看3天)
+http://113.15.109.216:59901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路18&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",大湾区卫视 (回看4天)
+http://113.15.109.216:59901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路18&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",大湾区卫视 (回看5天)
+http://113.15.109.216:59901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路18&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",大湾区卫视 (回看6天)
+http://113.15.109.216:59901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路18&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",大湾区卫视 (回看7天)
+http://113.15.109.216:59901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路18&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看3天)
+http://125.82.171.210:8888/rtp/235.254.198.1:1280$IPV4•线路276&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看4天)
+http://125.82.171.210:8888/rtp/235.254.198.1:1280$IPV4•线路276&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看5天)
+http://125.82.171.210:8888/rtp/235.254.198.1:1280$IPV4•线路276&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看6天)
+http://125.82.171.210:8888/rtp/235.254.198.1:1280$IPV4•线路276&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看7天)
+http://125.82.171.210:8888/rtp/235.254.198.1:1280$IPV4•线路276&replay=1&days=7
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看3天)
+http://aktv.top/AKTV/live/aktv3/null/AKTV.m3u8$IPV4•线路176&replay=1&days=3
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看4天)
+http://aktv.top/AKTV/live/aktv3/null/AKTV.m3u8$IPV4•线路176&replay=1&days=4
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看5天)
+http://aktv.top/AKTV/live/aktv3/null/AKTV.m3u8$IPV4•线路176&replay=1&days=5
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看6天)
+http://aktv.top/AKTV/live/aktv3/null/AKTV.m3u8$IPV4•线路176&replay=1&days=6
+#EXTINF:-1 group-title="卫视频道,",东方卫视 (回看7天)
+http://aktv.top/AKTV/live/aktv3/null/AKTV.m3u8$IPV4•线路176&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看3天)
+http://58.220.211.90:352/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路23&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看4天)
+http://58.220.211.90:352/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路23&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看5天)
+http://58.220.211.90:352/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路23&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看6天)
+http://58.220.211.90:352/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路23&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看7天)
+http://58.220.211.90:352/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路23&replay=1&days=7
+#EXTINF:-1 group-title="卫视频道,",宁夏卫视 (回看3天)
+http://38827sf80aj6.vicp.fun:9901/tsfile/live/0112_1.m3u8?key=txiptv$IPV4•线路229&replay=1&days=3
+#EXTINF:-1 group-title="卫视频道,",宁夏卫视 (回看4天)
+http://38827sf80aj6.vicp.fun:9901/tsfile/live/0112_1.m3u8?key=txiptv$IPV4•线路229&replay=1&days=4
+#EXTINF:-1 group-title="卫视频道,",宁夏卫视 (回看5天)
+http://38827sf80aj6.vicp.fun:9901/tsfile/live/0112_1.m3u8?key=txiptv$IPV4•线路229&replay=1&days=5
+#EXTINF:-1 group-title="卫视频道,",宁夏卫视 (回看6天)
+http://38827sf80aj6.vicp.fun:9901/tsfile/live/0112_1.m3u8?key=txiptv$IPV4•线路229&replay=1&days=6
+#EXTINF:-1 group-title="卫视频道,",宁夏卫视 (回看7天)
+http://38827sf80aj6.vicp.fun:9901/tsfile/live/0112_1.m3u8?key=txiptv$IPV4•线路229&replay=1&days=7
+#EXTINF:-1 group-title="大湾区频道,",凤凰资讯 (回看3天)
+http://122.117.71.103:8573/http/61.222.53.250:8081/hls/75/817/ch59.m3u8$IPV4•线路43&replay=1&days=3
+#EXTINF:-1 group-title="大湾区频道,",凤凰资讯 (回看4天)
+http://122.117.71.103:8573/http/61.222.53.250:8081/hls/75/817/ch59.m3u8$IPV4•线路43&replay=1&days=4
+#EXTINF:-1 group-title="大湾区频道,",凤凰资讯 (回看5天)
+http://122.117.71.103:8573/http/61.222.53.250:8081/hls/75/817/ch59.m3u8$IPV4•线路43&replay=1&days=5
+#EXTINF:-1 group-title="大湾区频道,",凤凰资讯 (回看6天)
+http://122.117.71.103:8573/http/61.222.53.250:8081/hls/75/817/ch59.m3u8$IPV4•线路43&replay=1&days=6
+#EXTINF:-1 group-title="大湾区频道,",凤凰资讯 (回看7天)
+http://122.117.71.103:8573/http/61.222.53.250:8081/hls/75/817/ch59.m3u8$IPV4•线路43&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看3天)
+http://182.91.124.224:9901/tsfile/live/1037_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路155&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看4天)
+http://182.91.124.224:9901/tsfile/live/1037_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路155&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看5天)
+http://182.91.124.224:9901/tsfile/live/1037_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路155&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看6天)
+http://182.91.124.224:9901/tsfile/live/1037_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路155&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看7天)
+http://182.91.124.224:9901/tsfile/live/1037_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路155&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV4 (回看3天)
+http://114.252.236.205:8000/rtp/239.3.1.105:8092$IPV4•线路261&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV4 (回看4天)
+http://114.252.236.205:8000/rtp/239.3.1.105:8092$IPV4•线路261&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV4 (回看5天)
+http://114.252.236.205:8000/rtp/239.3.1.105:8092$IPV4•线路261&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV4 (回看6天)
+http://114.252.236.205:8000/rtp/239.3.1.105:8092$IPV4•线路261&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV4 (回看7天)
+http://114.252.236.205:8000/rtp/239.3.1.105:8092$IPV4•线路261&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV8 (回看3天)
+http://223.105.252.57/PLTV/3/224/3221228165/index.m3u8?servicetype=1$IPV4•线路101&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV8 (回看4天)
+http://223.105.252.57/PLTV/3/224/3221228165/index.m3u8?servicetype=1$IPV4•线路101&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV8 (回看5天)
+http://223.105.252.57/PLTV/3/224/3221228165/index.m3u8?servicetype=1$IPV4•线路101&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV8 (回看6天)
+http://223.105.252.57/PLTV/3/224/3221228165/index.m3u8?servicetype=1$IPV4•线路101&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV8 (回看7天)
+http://223.105.252.57/PLTV/3/224/3221228165/index.m3u8?servicetype=1$IPV4•线路101&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",大湾区卫视 (回看3天)
+http://113.15.109.216:59901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路141&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",大湾区卫视 (回看4天)
+http://113.15.109.216:59901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路141&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",大湾区卫视 (回看5天)
+http://113.15.109.216:59901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路141&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",大湾区卫视 (回看6天)
+http://113.15.109.216:59901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路141&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",大湾区卫视 (回看7天)
+http://113.15.109.216:59901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路141&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看3天)
+http://182.91.124.224:9901/tsfile/live/1037_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路690&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看4天)
+http://182.91.124.224:9901/tsfile/live/1037_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路690&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看5天)
+http://182.91.124.224:9901/tsfile/live/1037_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路690&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看6天)
+http://182.91.124.224:9901/tsfile/live/1037_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路690&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看7天)
+http://182.91.124.224:9901/tsfile/live/1037_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路690&replay=1&days=7
+#EXTINF:-1 group-title="卫视频道,",青海卫视 (回看3天)
+http://stream.qhbtv.com/qhws/sd/live.m3u8?_upt=ff6a0a8b1739191764$IPV4•线路54&replay=1&days=3
+#EXTINF:-1 group-title="卫视频道,",青海卫视 (回看4天)
+http://stream.qhbtv.com/qhws/sd/live.m3u8?_upt=ff6a0a8b1739191764$IPV4•线路54&replay=1&days=4
+#EXTINF:-1 group-title="卫视频道,",青海卫视 (回看5天)
+http://stream.qhbtv.com/qhws/sd/live.m3u8?_upt=ff6a0a8b1739191764$IPV4•线路54&replay=1&days=5
+#EXTINF:-1 group-title="卫视频道,",青海卫视 (回看6天)
+http://stream.qhbtv.com/qhws/sd/live.m3u8?_upt=ff6a0a8b1739191764$IPV4•线路54&replay=1&days=6
+#EXTINF:-1 group-title="卫视频道,",青海卫视 (回看7天)
+http://stream.qhbtv.com/qhws/sd/live.m3u8?_upt=ff6a0a8b1739191764$IPV4•线路54&replay=1&days=7
+#EXTINF:-1 group-title="卫视频道,",东南卫视 (回看3天)
+http://219.145.59.166:8888/tsfile/live/1040_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路325&replay=1&days=3
+#EXTINF:-1 group-title="卫视频道,",东南卫视 (回看4天)
+http://219.145.59.166:8888/tsfile/live/1040_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路325&replay=1&days=4
+#EXTINF:-1 group-title="卫视频道,",东南卫视 (回看5天)
+http://219.145.59.166:8888/tsfile/live/1040_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路325&replay=1&days=5
+#EXTINF:-1 group-title="卫视频道,",东南卫视 (回看6天)
+http://219.145.59.166:8888/tsfile/live/1040_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路325&replay=1&days=6
+#EXTINF:-1 group-title="卫视频道,",东南卫视 (回看7天)
+http://219.145.59.166:8888/tsfile/live/1040_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路325&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广东珠江 (回看3天)
+http://live.xmcdn.com/live/252/64.m3u8$IPV4•线路26&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广东珠江 (回看4天)
+http://live.xmcdn.com/live/252/64.m3u8$IPV4•线路26&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广东珠江 (回看5天)
+http://live.xmcdn.com/live/252/64.m3u8$IPV4•线路26&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广东珠江 (回看6天)
+http://live.xmcdn.com/live/252/64.m3u8$IPV4•线路26&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广东珠江 (回看7天)
+http://live.xmcdn.com/live/252/64.m3u8$IPV4•线路26&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV3 (回看3天)
+http://139.209.169.41:9003//hls/3/index.m3u8$IPV4•线路541&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV3 (回看4天)
+http://139.209.169.41:9003//hls/3/index.m3u8$IPV4•线路541&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV3 (回看5天)
+http://139.209.169.41:9003//hls/3/index.m3u8$IPV4•线路541&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV3 (回看6天)
+http://139.209.169.41:9003//hls/3/index.m3u8$IPV4•线路541&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV3 (回看7天)
+http://139.209.169.41:9003//hls/3/index.m3u8$IPV4•线路541&replay=1&days=7
+#EXTINF:-1 group-title="影视频道,",纬来电影 (回看3天)
+http://122.117.71.103:8554/http/220.130.87.218:8081/hls/69/811/ch035.m3u8$IPV4•线路4&replay=1&days=3
+#EXTINF:-1 group-title="影视频道,",纬来电影 (回看4天)
+http://122.117.71.103:8554/http/220.130.87.218:8081/hls/69/811/ch035.m3u8$IPV4•线路4&replay=1&days=4
+#EXTINF:-1 group-title="影视频道,",纬来电影 (回看5天)
+http://122.117.71.103:8554/http/220.130.87.218:8081/hls/69/811/ch035.m3u8$IPV4•线路4&replay=1&days=5
+#EXTINF:-1 group-title="影视频道,",纬来电影 (回看6天)
+http://122.117.71.103:8554/http/220.130.87.218:8081/hls/69/811/ch035.m3u8$IPV4•线路4&replay=1&days=6
+#EXTINF:-1 group-title="影视频道,",纬来电影 (回看7天)
+http://122.117.71.103:8554/http/220.130.87.218:8081/hls/69/811/ch035.m3u8$IPV4•线路4&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看3天)
+http://60.7.56.33:4000/udp/239.253.92.83:8012$IPV4•线路270&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看4天)
+http://60.7.56.33:4000/udp/239.253.92.83:8012$IPV4•线路270&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看5天)
+http://60.7.56.33:4000/udp/239.253.92.83:8012$IPV4•线路270&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看6天)
+http://60.7.56.33:4000/udp/239.253.92.83:8012$IPV4•线路270&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看7天)
+http://60.7.56.33:4000/udp/239.253.92.83:8012$IPV4•线路270&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV2 (回看3天)
+http://116.128.243.121:85/tsfile/live/0002_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路17&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV2 (回看4天)
+http://116.128.243.121:85/tsfile/live/0002_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路17&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV2 (回看5天)
+http://116.128.243.121:85/tsfile/live/0002_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路17&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV2 (回看6天)
+http://116.128.243.121:85/tsfile/live/0002_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路17&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV2 (回看7天)
+http://116.128.243.121:85/tsfile/live/0002_1.m3u8?key=txiptv&playlive=0&authid=0$IPV4•线路17&replay=1&days=7
+#EXTINF:-1 group-title="广东频道,",广东珠江 (回看3天)
+http://121.11.160.7:9901/tsfile/live/0018_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路92&replay=1&days=3
+#EXTINF:-1 group-title="广东频道,",广东珠江 (回看4天)
+http://121.11.160.7:9901/tsfile/live/0018_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路92&replay=1&days=4
+#EXTINF:-1 group-title="广东频道,",广东珠江 (回看5天)
+http://121.11.160.7:9901/tsfile/live/0018_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路92&replay=1&days=5
+#EXTINF:-1 group-title="广东频道,",广东珠江 (回看6天)
+http://121.11.160.7:9901/tsfile/live/0018_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路92&replay=1&days=6
+#EXTINF:-1 group-title="广东频道,",广东珠江 (回看7天)
+http://121.11.160.7:9901/tsfile/live/0018_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路92&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看3天)
+http://180.158.201.25:1024/udp/239.45.3.145:5140$IPV4•线路631&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看4天)
+http://180.158.201.25:1024/udp/239.45.3.145:5140$IPV4•线路631&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看5天)
+http://180.158.201.25:1024/udp/239.45.3.145:5140$IPV4•线路631&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看6天)
+http://180.158.201.25:1024/udp/239.45.3.145:5140$IPV4•线路631&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看7天)
+http://180.158.201.25:1024/udp/239.45.3.145:5140$IPV4•线路631&replay=1&days=7
+#EXTINF:-1 group-title="大湾区频道,",凤凰中文 (回看3天)
+http://122.117.71.103:8574/http/61.222.53.250:8078/hls/21/80/phoenixch.m3u8$IPV4•线路43&replay=1&days=3
+#EXTINF:-1 group-title="大湾区频道,",凤凰中文 (回看4天)
+http://122.117.71.103:8574/http/61.222.53.250:8078/hls/21/80/phoenixch.m3u8$IPV4•线路43&replay=1&days=4
+#EXTINF:-1 group-title="大湾区频道,",凤凰中文 (回看5天)
+http://122.117.71.103:8574/http/61.222.53.250:8078/hls/21/80/phoenixch.m3u8$IPV4•线路43&replay=1&days=5
+#EXTINF:-1 group-title="大湾区频道,",凤凰中文 (回看6天)
+http://122.117.71.103:8574/http/61.222.53.250:8078/hls/21/80/phoenixch.m3u8$IPV4•线路43&replay=1&days=6
+#EXTINF:-1 group-title="大湾区频道,",凤凰中文 (回看7天)
+http://122.117.71.103:8574/http/61.222.53.250:8078/hls/21/80/phoenixch.m3u8$IPV4•线路43&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看3天)
+http://fm1077.serv00.net/Smart.php?id=cctv1$IPV4•线路503&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看4天)
+http://fm1077.serv00.net/Smart.php?id=cctv1$IPV4•线路503&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看5天)
+http://fm1077.serv00.net/Smart.php?id=cctv1$IPV4•线路503&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看6天)
+http://fm1077.serv00.net/Smart.php?id=cctv1$IPV4•线路503&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看7天)
+http://fm1077.serv00.net/Smart.php?id=cctv1$IPV4•线路503&replay=1&days=7
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看3天)
+http://61.10.2.146/live_freedirect/freehd209_h.live/playlist.m3u8$IPV4•线路19&replay=1&days=3
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看4天)
+http://61.10.2.146/live_freedirect/freehd209_h.live/playlist.m3u8$IPV4•线路19&replay=1&days=4
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看5天)
+http://61.10.2.146/live_freedirect/freehd209_h.live/playlist.m3u8$IPV4•线路19&replay=1&days=5
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看6天)
+http://61.10.2.146/live_freedirect/freehd209_h.live/playlist.m3u8$IPV4•线路19&replay=1&days=6
+#EXTINF:-1 group-title="大湾区频道,",有线新闻 (回看7天)
+http://61.10.2.146/live_freedirect/freehd209_h.live/playlist.m3u8$IPV4•线路19&replay=1&days=7
+#EXTINF:-1 group-title="大湾区频道,",翡翠台 (回看3天)
+http://cdn9.163189.xyz/smt1.1.php?id=jade_twn$IPV4•线路8&replay=1&days=3
+#EXTINF:-1 group-title="大湾区频道,",翡翠台 (回看4天)
+http://cdn9.163189.xyz/smt1.1.php?id=jade_twn$IPV4•线路8&replay=1&days=4
+#EXTINF:-1 group-title="大湾区频道,",翡翠台 (回看5天)
+http://cdn9.163189.xyz/smt1.1.php?id=jade_twn$IPV4•线路8&replay=1&days=5
+#EXTINF:-1 group-title="大湾区频道,",翡翠台 (回看6天)
+http://cdn9.163189.xyz/smt1.1.php?id=jade_twn$IPV4•线路8&replay=1&days=6
+#EXTINF:-1 group-title="大湾区频道,",翡翠台 (回看7天)
+http://cdn9.163189.xyz/smt1.1.php?id=jade_twn$IPV4•线路8&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看3天)
+http://110.7.131.146:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路187&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看4天)
+http://110.7.131.146:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路187&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看5天)
+http://110.7.131.146:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路187&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看6天)
+http://110.7.131.146:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路187&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV1 (回看7天)
+http://110.7.131.146:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路187&replay=1&days=7
+#EXTINF:-1 group-title="央视频道,",CCTV10 (回看3天)
+http://110.7.131.79:9901/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路151&replay=1&days=3
+#EXTINF:-1 group-title="央视频道,",CCTV10 (回看4天)
+http://110.7.131.79:9901/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路151&replay=1&days=4
+#EXTINF:-1 group-title="央视频道,",CCTV10 (回看5天)
+http://110.7.131.79:9901/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路151&replay=1&days=5
+#EXTINF:-1 group-title="央视频道,",CCTV10 (回看6天)
+http://110.7.131.79:9901/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路151&replay=1&days=6
+#EXTINF:-1 group-title="央视频道,",CCTV10 (回看7天)
+http://110.7.131.79:9901/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0$IPV4•线路151&replay=1&days=7
