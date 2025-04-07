@@ -67,7 +67,7 @@ async def main():
         logging.info("Starting to generate M3U and TXT files...")
         output_path = os.path.join(output_dir, 'result.txt')
         logging.debug(f"Calling convert_to_m3u with path: {output_path}")
-        convert_to_m3u(path=output_path)
+        convert_to_m3u(results, output_path)
         m3u_file = os.path.join(output_dir, 'result.m3u')
         txt_file = os.path.join(output_dir, 'result.txt')
         if os.path.exists(m3u_file) and os.path.exists(txt_file):
