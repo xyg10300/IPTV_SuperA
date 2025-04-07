@@ -19,19 +19,20 @@ def read_subscribe_file(file_path):
         logging.error(f"未找到订阅文件: {file_path}")
         return []
 
-# 异步获取 URL 内容并测试响应时间
-async def fetch_url(session, url):
-    start_time = time.time()
-    try:
-        async with session.get(url, timeout=10) as response:
-            if response.status == 200:
-                content = await response.text()
-                elapsed_time = time.time() - start_time
-                return content, elapsed_time
-            else:
-                logging.warning(f"请求 {url} 失败，状态码: {response.status}")
-    except Exception as e:
-        logging.error(f"请求 {url} 时发生错误: {e}")
+# 异步获取 URL 内容并测试响应时间，增加重试机制
+async def fetch_url(session, url, max_retries=3):
+    for attempt in range(max_retries):
+        start_time = time.time()
+        try:
+            async with session.get(url, timeout=10) as response:
+                if response.status == 200:
+                    content = await response.text()
+                    elapsed_time = time.time() - start_time
+                    return content, elapsed_time
+                else:
+                    logging.warning(f"请求 {url} 失败，状态码: {response.status}，尝试第 {attempt + 1} 次重试")
+        except Exception as e:
+            logging.error(f"请求 {url} 时发生错误: {e}，尝试第 {attempt + 1} 次重试")
     return None, float('inf')
 
 # 解析 M3U 格式内容
@@ -101,16 +102,20 @@ def merge_and_deduplicate(channels_list):
             url_set.add(channel['url'])
     return unique_channels
 
-# 测试每个频道的响应时间
-async def test_channel_response_time(session, channel):
-    start_time = time.time()
-    try:
-        async with session.get(channel['url'], timeout=10) as response:
-            if response.status == 200:
-                elapsed_time = time.time() - start_time
-                channel['response_time'] = elapsed_time
-    except Exception as e:
-        logging.error(f"测试 {channel['url']} 响应时间时发生错误: {e}")
+# 测试每个频道的响应时间，增加重试机制
+async def test_channel_response_time(session, channel, max_retries=3):
+    for attempt in range(max_retries):
+        start_time = time.time()
+        try:
+            async with session.get(channel['url'], timeout=10) as response:
+                if response.status == 200:
+                    elapsed_time = time.time() - start_time
+                    channel['response_time'] = elapsed_time
+                    return channel
+                else:
+                    logging.warning(f"测试 {channel['url']} 响应时间失败，状态码: {response.status}，尝试第 {attempt + 1} 次重试")
+        except Exception as e:
+            logging.error(f"测试 {channel['url']} 响应时间时发生错误: {e}，尝试第 {attempt + 1} 次重试")
     return channel
 
 # 生成 M3U 文件，增加 EPG 回放支持
@@ -146,15 +151,16 @@ def generate_txt_file(channels, output_path):
             f.write(f'{channel["name"]},{channel["url"]}\n')
 
 # 自动获取 EPG 全接口源码
-async def fetch_epg_url(session, epg_url):
-    try:
-        async with session.get(epg_url, timeout=10) as response:
-            if response.status == 200:
-                return await response.text()
-            else:
-                logging.warning(f"请求 EPG 接口 {epg_url} 失败，状态码: {response.status}")
-    except Exception as e:
-        logging.error(f"请求 EPG 接口 {epg_url} 时发生错误: {e}")
+async def fetch_epg_url(session, epg_url, max_retries=3):
+    for attempt in range(max_retries):
+        try:
+            async with session.get(epg_url, timeout=10) as response:
+                if response.status == 200:
+                    return await response.text()
+                else:
+                    logging.warning(f"请求 EPG 接口 {epg_url} 失败，状态码: {response.status}，尝试第 {attempt + 1} 次重试")
+        except Exception as e:
+            logging.error(f"请求 EPG 接口 {epg_url} 时发生错误: {e}，尝试第 {attempt + 1} 次重试")
     return None
 
 # 更新 README.md
