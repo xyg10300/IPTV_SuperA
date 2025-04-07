@@ -1,44 +1,44 @@
-name: 'Update schedule'
+name: IPTV M3U Generator
 
 on:
   schedule:
-    - cron: '0 22,10 * * *'
+    - cron: '0 0 * * *'  # 每天凌晨执行
   workflow_dispatch:
-    branches:
-      - master
-      - dev
 
 jobs:
-  push:
-    runs-on: ubuntu-20.04
-    timeout-minutes: 120
+  build:
+    runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Run with setup-python 3.13
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.13'
-          update-environment: true
-          cache: 'pipenv'
+          cache: 'pip'
+
       - name: Install pipenv
-        run: pip3 install --user pipenv
+        run: pip install pipenv
+
       - name: Install dependencies
-        run: |
-          pipenv --python 3.13
-          if [ -f Pipfile.lock ]; then
-            pipenv install --deploy
-          else
-            pipenv install
-          fi
+        run: pipenv install --deploy
+
       - name: Install FFmpeg
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
-      - name: Update
+
+      - name: Generate M3U and TXT files
         run: pipenv run dev
-      - name: Commit and push if changed
+
+      - name: Commit and push changes
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add .
-          if ! git diff --staged --quiet; then
-            git commit -m "Github Action Auto Updated"
-            git push --force
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add output/result.m3u output/result.txt
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update IPTV files"
+            git push
+          fi    
