@@ -1,5 +1,1 @@
 #EXTM3U
-#EXTINF:-1, {'speed': 1.174911953090432, 'delay': 1240}
-http://example.com/stream
-#EXTINF:-1, {'speed': 0.036311521915371306, 'delay': 186}
-http://example.com/stream
