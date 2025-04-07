@@ -133,8 +133,7 @@ def generate_m3u_file(channels, output_path, replay_days=7, custom_sort_order=No
     if custom_sort_order:
         sorted_groups = sorted(group_channels.keys(), key=lambda x: custom_sort_order.index(x) if x in custom_sort_order else float('inf'))
     else:
-        # 智能化排序：按频道数量排序
-        sorted_groups = sorted(group_channels.keys(), key=lambda x: len(group_channels[x]), reverse=True)
+        sorted_groups = sorted(group_channels.keys())
 
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
@@ -173,8 +172,7 @@ def generate_txt_file(channels, output_path, custom_sort_order=None):
     if custom_sort_order:
         sorted_groups = sorted(group_channels.keys(), key=lambda x: custom_sort_order.index(x) if x in custom_sort_order else float('inf'))
     else:
-        # 智能化排序：按频道数量排序
-        sorted_groups = sorted(group_channels.keys(), key=lambda x: len(group_channels[x]), reverse=True)
+        sorted_groups = sorted(group_channels.keys())
 
     with open(output_path, 'w', encoding='utf-8') as f:
         for group_title in sorted_groups:
