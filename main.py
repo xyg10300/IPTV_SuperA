@@ -151,7 +151,9 @@ def generate_m3u_file(channels, output_path, replay_days=7, custom_sort_order=No
                 if channel['tvg_name']:
                     metadata += f' tvg-name="{channel["tvg_name"]}"'
                 if channel['group_title']:
-                    metadata += f' group-title="{channel["group_title"]}"'
+                    # 去除 group_title 中的多余逗号
+                    clean_group_title = channel["group_title"].strip(',').strip()
+                    metadata += f' group-title="{clean_group_title}"'
                 # 添加回放参数
                 replay_url = f'{channel["url"]}&replay=1&days={replay_days}'
                 f.write(f'{metadata},{channel["name"]}\n')
