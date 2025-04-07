@@ -1,6 +1,6 @@
 import asyncio
 import aiohttp
-from utils.speed import get_speed_with_download  # 修改为导入正确的函数
+from utils.speed import get_speed_with_download
 from utils.tools import convert_to_m3u
 from utils.config import config_instance
 
