@@ -118,62 +118,70 @@ def read_include_list(file_path):
 # 生成 M3U 文件，增加 EPG 回放支持，可过滤响应时间过长的频道和特定组名或频道
 def generate_m3u_file(channels, output_path, replay_days=7, max_response_time=float('inf'), 
                       include_groups=None, include_channels=None):
-    group_channels = {}
-    for channel in channels:
-        # 过滤响应时间过长的频道
-        if channel['response_time'] <= max_response_time:
-            # 过滤特定组名或频道
-            if ((include_groups is None or channel['group_title'] in include_groups) and
-                (include_channels is None or channel['name'] in include_channels)):
-                group_title = channel['group_title'] or ''
-                group_channels.setdefault(group_title, []).append(channel)
+    try:
+        group_channels = {}
+        for channel in channels:
+            # 过滤响应时间过长的频道
+            if channel['response_time'] <= max_response_time:
+                # 过滤特定组名或频道
+                if ((include_groups is None or channel['group_title'] in include_groups) and
+                    (include_channels is None or channel['name'] in include_channels)):
+                    group_title = channel['group_title'] or ''
+                    group_channels.setdefault(group_title, []).append(channel)
 
-    sorted_groups = sorted(group_channels.keys())
+        sorted_groups = sorted(group_channels.keys())
 
-    with open(output_path, 'w', encoding='utf-8') as f:
-        f.write('#EXTM3U\n')
-        for group_title in sorted_groups:
-            group = group_channels[group_title]
-            sorted_group = sorted(group, key=lambda x: x['response_time'])
-            if group_title:
-                f.write(f'#EXTGRP:{group_title}\n')
-            for channel in sorted_group:
-                metadata = '#EXTINF:-1'
-                if channel['tvg_id']:
-                    metadata += f' tvg-id="{channel["tvg_id"]}"'
-                if channel['tvg_name']:
-                    metadata += f' tvg-name="{channel["tvg_name"]}"'
-                if channel['group_title']:
-                    metadata += f' group-title="{channel["group_title"].rstrip(",")}"'
-                replay_url = f'{channel["url"]}&replay=1&days={replay_days}'
-                f.write(f'{metadata},{channel["name"]}\n')
-                f.write(f'{replay_url}\n')
-            f.write('\n')
+        with open(output_path, 'w', encoding='utf-8') as f:
+            f.write('#EXTM3U\n')
+            for group_title in sorted_groups:
+                group = group_channels[group_title]
+                sorted_group = sorted(group, key=lambda x: x['response_time'])
+                if group_title:
+                    f.write(f'#EXTGRP:{group_title}\n')
+                for channel in sorted_group:
+                    metadata = '#EXTINF:-1'
+                    if channel['tvg_id']:
+                        metadata += f' tvg-id="{channel["tvg_id"]}"'
+                    if channel['tvg_name']:
+                        metadata += f' tvg-name="{channel["tvg_name"]}"'
+                    if channel['group_title']:
+                        metadata += f' group-title="{channel["group_title"].rstrip(",")}"'
+                    replay_url = f'{channel["url"]}&replay=1&days={replay_days}'
+                    f.write(f'{metadata},{channel["name"]}\n')
+                    f.write(f'{replay_url}\n')
+                f.write('\n')
+        logging.info(f"成功生成 M3U 文件: {output_path}")
+    except Exception as e:
+        logging.error(f"生成 M3U 文件时出错: {e}")
 
 # 生成 TXT 文件，可过滤响应时间过长的频道和特定组名或频道
 def generate_txt_file(channels, output_path, max_response_time=float('inf'), 
                       include_groups=None, include_channels=None):
-    group_channels = {}
-    for channel in channels:
-        # 过滤响应时间过长的频道
-        if channel['response_time'] <= max_response_time:
-            # 过滤特定组名或频道
-            if ((include_groups is None or channel['group_title'] in include_groups) and
-                (include_channels is None or channel['name'] in include_channels)):
-                group_title = channel['group_title'] or ''
-                group_channels.setdefault(group_title, []).append(channel)
+    try:
+        group_channels = {}
+        for channel in channels:
+            # 过滤响应时间过长的频道
+            if channel['response_time'] <= max_response_time:
+                # 过滤特定组名或频道
+                if ((include_groups is None or channel['group_title'] in include_groups) and
+                    (include_channels is None or channel['name'] in include_channels)):
+                    group_title = channel['group_title'] or ''
+                    group_channels.setdefault(group_title, []).append(channel)
 
-    sorted_groups = sorted(group_channels.keys())
+        sorted_groups = sorted(group_channels.keys())
 
-    with open(output_path, 'w', encoding='utf-8') as f:
-        for group_title in sorted_groups:
-            group = group_channels[group_title]
-            sorted_group = sorted(group, key=lambda x: x['response_time'])
-            if group_title:
-                f.write(f'{group_title}#genre#\n')
-            for channel in sorted_group:
-                f.write(f'{channel["name"]},{channel["url"]}\n')
-            f.write('\n')
+        with open(output_path, 'w', encoding='utf-8') as f:
+            for group_title in sorted_groups:
+                group = group_channels[group_title]
+                sorted_group = sorted(group, key=lambda x: x['response_time'])
+                if group_title:
+                    f.write(f'{group_title}#genre#\n')
+                for channel in sorted_group:
+                    f.write(f'{channel["name"]},{channel["url"]}\n')
+                f.write('\n')
+        logging.info(f"成功生成 TXT 文件: {output_path}")
+    except Exception as e:
+        logging.error(f"生成 TXT 文件时出错: {e}")
 
 async def main():
     subscribe_file = 'config/subscribe.txt'
@@ -233,7 +241,6 @@ async def main():
     generate_txt_file(unique_channels, output_txt, max_response_time=max_response_time, 
                       include_groups=include_groups, include_channels=include_channels)
 
-    logging.info("成功生成 M3U 和 TXT 文件。")
-
 if __name__ == '__main__':
-    asyncio.run(main())    
+    asyncio.run(main())
+    
