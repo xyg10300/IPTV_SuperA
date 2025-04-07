@@ -2,6 +2,19 @@ import asyncio
 import aiohttp
 import logging
 import os
+
+# 检查所需文件和目录
+REQUIRED_FILES = [
+    'config/subscribe.txt',
+    'utils/speed.py',
+    'utils/tools.py',
+    'utils/config.py'
+]
+
+for file in REQUIRED_FILES:
+    if not os.path.exists(file):
+        raise FileNotFoundError(f"Required file {file} not found.")
+
 from utils.speed import get_speed_with_download
 from utils.tools import convert_to_m3u
 from utils.config import config_instance
@@ -12,12 +25,6 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %
 async def fetch_urls():
     urls = []
     try:
-        if not os.path.exists('config'):
-            logging.error("Config directory not found.")
-            return []
-        if not os.path.exists('config/subscribe.txt'):
-            logging.error("config/subscribe.txt file not found.")
-            return []
         with open('config/subscribe.txt', 'r') as f:
             for line in f:
                 url = line.strip()
@@ -41,9 +48,8 @@ async def fetch_urls():
             logging.error(f"Error occurred while fetching URLs: {e}")
             return []
 
-def main():
-    loop = asyncio.get_event_loop()
-    results = loop.run_until_complete(fetch_urls())
+async def main():
+    results = await fetch_urls()
     if not results:
         logging.error("No valid results obtained from fetching URLs.")
         return
@@ -67,10 +73,8 @@ def main():
         else:
             logging.error("Failed to generate M3U and/or TXT files.")
     except Exception as e:
-        logging.error(f"Error occurred while generating M3U and TXT files: {e}")
-        import traceback
-        traceback.print_exc()
+        logging.error(f"Error occurred while generating M3U and TXT files: {e}", exc_info=True)
 
 if __name__ == '__main__':
-    main()
+    asyncio.run(main())
     
