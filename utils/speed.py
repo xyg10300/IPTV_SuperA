@@ -8,7 +8,7 @@ from urllib.parse import quote, urlparse
 
 import m3u8
 from aiohttp import ClientSession, TCPConnector
-from multidict import CIMultiDictProxy
+from utils.config import config_instance  # 导入 config_instance
 
 http.cookies._is_legal_key = lambda _: True
 cache = {}
@@ -40,3 +40,4 @@ async def get_speed_with_download(url: str, session: ClientSession = None, timeo
         if created_session:
             await session.close()
         return info
+    
