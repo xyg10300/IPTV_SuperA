@@ -35,16 +35,14 @@ async def fetch_url(session, url):
     start_time = time.time()
     try:
         async with session.get(url, timeout=10) as response:
-            response.raise_for_status()  # 检查响应状态码
-            content = await response.text()
-            elapsed_time = time.time() - start_time
-            return content, elapsed_time
-    except asyncio.TimeoutError:
-        logging.warning(f"请求 {url} 超时")
-    except aiohttp.ClientError as e:
-        logging.warning(f"请求 {url} 失败: {e}")
+            if response.status == 200:
+                content = await response.text()
+                elapsed_time = time.time() - start_time
+                return content, elapsed_time
+            else:
+                logging.warning(f"请求 {url} 失败，状态码: {response.status}")
     except Exception as e:
-        logging.error(f"请求 {url} 时发生未知错误: {e}")
+        logging.error(f"请求 {url} 时发生错误: {e}")
     return None, float('inf')
 
 
@@ -123,26 +121,22 @@ async def test_channel_response_time(session, channel):
     start_time = time.time()
     try:
         async with session.get(channel['url'], timeout=10) as response:
-            response.raise_for_status()  # 检查响应状态码
-            elapsed_time = time.time() - start_time
-            channel['response_time'] = elapsed_time
-    except asyncio.TimeoutError:
-        logging.warning(f"测试 {channel['url']} 响应时间超时")
-    except aiohttp.ClientError as e:
-        logging.warning(f"测试 {channel['url']} 响应时间失败: {e}")
+            if response.status == 200:
+                elapsed_time = time.time() - start_time
+                channel['response_time'] = elapsed_time
     except Exception as e:
-        logging.error(f"测试 {channel['url']} 响应时间时发生未知错误: {e}")
+        logging.error(f"测试 {channel['url']} 响应时间时发生错误: {e}")
     return channel
 
 
-# 过滤出包含在 include_list 中的频道，并删除错误或失效响应源
+# 过滤出包含在 include_list 中的频道
 def filter_channels(channels, include_list):
     filtered_channels = []
     for channel in channels:
         group_title = channel['group_title'] or ''
         name = channel['name']
-        # 如果组名或频道名在 include_list 中，并且响应时间不是无穷大，则保留该频道
-        if (group_title in include_list or name in include_list) and channel['response_time'] != float('inf'):
+        # 如果组名或频道名在 include_list 中，则保留该频道
+        if group_title in include_list or name in include_list:
             filtered_channels.append(channel)
     return filtered_channels
 
@@ -264,7 +258,7 @@ async def main():
         tasks = [test_channel_response_time(session, channel) for channel in unique_channels]
         unique_channels = await asyncio.gather(*tasks)
 
-    # 过滤频道，删除错误或失效响应源
+    # 过滤频道
     filtered_channels = filter_channels(unique_channels, include_list)
 
     # 生成 M3U 和 TXT 文件
