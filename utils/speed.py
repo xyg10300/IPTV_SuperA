@@ -31,7 +31,7 @@ async def get_speed_with_download(url: str, session: ClientSession = None, timeo
             async for chunk in response.content.iter_any():
                 if chunk:
                     total_size += len(chunk)
-    except:
+    except Exception as e:
         pass
     finally:
         if total_size > 0:
