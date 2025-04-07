@@ -48,6 +48,8 @@ def main():
         logging.info("M3U and TXT files generated successfully.")
     except Exception as e:
         logging.error(f"Error occurred while generating M3U and TXT files: {e}")
+        import traceback
+        traceback.print_exc()
 
 if __name__ == '__main__':
     main()
