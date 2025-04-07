@@ -2,11 +2,13 @@ import asyncio
 import aiohttp
 import logging
 import os
+from collections import OrderedDict
 import re
 import time
 
 # 配置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
 
 # 读取订阅文件中的 URL
 def read_subscribe_file(file_path):
@@ -17,33 +19,29 @@ def read_subscribe_file(file_path):
         logging.error(f"未找到订阅文件: {file_path}")
         return []
 
-# 异步获取 URL 内容并测试响应时间，多次请求取平均值
-async def fetch_url(session, url, num_tries=3):
-    total_time = 0
-    successful_tries = 0
-    for _ in range(num_tries):
-        start_time = time.time()
-        try:
-            async with session.get(url, timeout=10) as response:
-                if response.status == 200:
-                    content = await response.text()
-                    elapsed_time = time.time() - start_time
-                    total_time += elapsed_time
-                    successful_tries += 1
-                    return content
-                else:
-                    logging.warning(f"请求 {url} 失败，状态码: {response.status}")
-        except asyncio.TimeoutError:
-            logging.error(f"请求 {url} 超时")
-        except Exception as e:
-            logging.error(f"请求 {url} 时发生错误: {e}")
-    return None
+
+# 异步获取 URL 内容并测试响应时间
+async def fetch_url(session, url):
+    start_time = time.time()
+    try:
+        async with session.get(url, timeout=10) as response:
+            if response.status == 200:
+                content = await response.text()
+                elapsed_time = time.time() - start_time
+                return content, elapsed_time
+            else:
+                logging.warning(f"请求 {url} 失败，状态码: {response.status}")
+    except Exception as e:
+        logging.error(f"请求 {url} 时发生错误: {e}")
+    return None, float('inf')
+
 
 # 解析 M3U 格式内容
 def parse_m3u_content(content):
     channels = []
     lines = content.splitlines()
-    for i in range(len(lines)):
+    i = 0
+    while i < len(lines):
         line = lines[i].strip()
         if line.startswith('#EXTINF:'):
             info = line.split(',', 1)
@@ -53,8 +51,9 @@ def parse_m3u_content(content):
                 tvg_id = re.search(r'tvg-id="([^"]+)"', metadata)
                 tvg_name = re.search(r'tvg-name="([^"]+)"', metadata)
                 group_title = re.search(r'group-title="([^"]+)"', metadata)
-                if i + 1 < len(lines):
-                    url = lines[i + 1].strip()
+                i += 1
+                if i < len(lines):
+                    url = lines[i].strip()
                     channel = {
                         'name': name,
                         'url': url,
@@ -64,7 +63,9 @@ def parse_m3u_content(content):
                         'response_time': float('inf')
                     }
                     channels.append(channel)
+        i += 1
     return channels
+
 
 # 解析 TXT 格式内容
 def parse_txt_content(content):
@@ -90,133 +91,115 @@ def parse_txt_content(content):
                 channels.append(channel)
     return channels
 
+
 # 合并并去重频道
 def merge_and_deduplicate(channels_list):
+    all_channels = []
+    for channels in channels_list:
+        all_channels.extend(channels)
     unique_channels = []
     url_set = set()
-    for channels in channels_list:
-        for channel in channels:
-            if channel['url'] not in url_set:
-                unique_channels.append(channel)
-                url_set.add(channel['url'])
+    for channel in all_channels:
+        if channel['url'] not in url_set:
+            unique_channels.append(channel)
+            url_set.add(channel['url'])
     return unique_channels
 
+
 # 测试每个频道的响应时间
-async def test_channel_response_time(session, channel, num_tries=1):
+async def test_channel_response_time(session, channel):
     start_time = time.time()
-    content = await fetch_url(session, channel['url'], num_tries)
-    if content is not None:
-        channel['response_time'] = time.time() - start_time
+    try:
+        async with session.get(channel['url'], timeout=10) as response:
+            if response.status == 200:
+                elapsed_time = time.time() - start_time
+                channel['response_time'] = elapsed_time
+    except Exception as e:
+        logging.error(f"测试 {channel['url']} 响应时间时发生错误: {e}")
     return channel
 
-# 从文件读取要保留的组名和频道名
-def read_include_list(file_path):
-    try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            return [line.strip() for line in f if line.strip()]
-    except FileNotFoundError:
-        logging.error(f"未找到包含列表文件: {file_path}")
-        return []
 
-# 生成 M3U 文件，增加 EPG 回放支持，可过滤响应时间过长的频道和特定组名或频道
-def generate_m3u_file(channels, output_path, replay_days=7, max_response_time=float('inf'),
-                      include_groups=None, include_channels=None):
-    # 过滤频道
-    filtered_channels = [
-        channel for channel in channels
-        if channel['response_time'] <= max_response_time
-        and (include_groups is None or channel['group_title'] in include_groups)
-        and (include_channels is None or channel['name'] in include_channels)
-    ]
-
-    if not filtered_channels:
-        logging.warning("过滤后无有效频道，M3U 文件将为空。")
-        return
-
-    # 按组分组
+# 生成 M3U 文件，增加 EPG 回放支持
+def generate_m3u_file(channels, output_path, replay_days=7, custom_sort_order=None):
+    # 按分组标题分组
     group_channels = {}
-    for channel in filtered_channels:
+    for channel in channels:
         group_title = channel['group_title'] or ''
-        group_channels.setdefault(group_title, []).append(channel)
+        if group_title not in group_channels:
+            group_channels[group_title] = []
+        group_channels[group_title].append(channel)
 
-    sorted_groups = sorted(group_channels.keys())
+    def custom_sort_key(group_title):
+        if custom_sort_order and group_title in custom_sort_order:
+            return custom_sort_order.index(group_title)
+        return float('inf')
 
-    try:
-        with open(output_path, 'w', encoding='utf-8') as f:
-            f.write('#EXTM3U\n')
-            for group_title in sorted_groups:
-                group = group_channels[group_title]
-                sorted_group = sorted(group, key=lambda x: x['response_time'])
-                if group_title:
-                    f.write(f'#EXTGRP:{group_title}\n')
-                for channel in sorted_group:
-                    metadata = '#EXTINF:-1'
-                    if channel['tvg_id']:
-                        metadata += f' tvg-id="{channel["tvg_id"]}"'
-                    if channel['tvg_name']:
-                        metadata += f' tvg-name="{channel["tvg_name"]}"'
-                    if channel['group_title']:
-                        metadata += f' group-title="{channel["group_title"].rstrip(",")}"'
-                    replay_url = f'{channel["url"]}&replay=1&days={replay_days}'
-                    f.write(f'{metadata},{channel["name"]}\n')
-                    f.write(f'{replay_url}\n')
-                f.write('\n')
-        logging.info(f"成功生成 M3U 文件: {output_path}")
-    except Exception as e:
-        logging.error(f"生成 M3U 文件时出错: {e}")
+    sorted_groups = sorted(group_channels.keys(), key=custom_sort_key)
 
-# 生成 TXT 文件，可过滤响应时间过长的频道和特定组名或频道
-def generate_txt_file(channels, output_path, max_response_time=float('inf'),
-                      include_groups=None, include_channels=None):
-    # 过滤频道
-    filtered_channels = [
-        channel for channel in channels
-        if channel['response_time'] <= max_response_time
-        and (include_groups is None or channel['group_title'] in include_groups)
-        and (include_channels is None or channel['name'] in include_channels)
-    ]
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write('#EXTM3U\n')
+        for group_title in sorted_groups:
+            group = group_channels[group_title]
+            # 组内按响应时间排序
+            sorted_group = sorted(group, key=lambda x: x['response_time'])
+            if group_title:
+                f.write(f'#EXTGRP:{group_title}\n')
+            for channel in sorted_group:
+                metadata = '#EXTINF:-1'
+                if channel['tvg_id']:
+                    metadata += f' tvg-id="{channel["tvg_id"]}"'
+                if channel['tvg_name']:
+                    metadata += f' tvg-name="{channel["tvg_name"]}"'
+                if channel['group_title']:
+                    metadata += f' group-title="{channel["group_title"]}"'
+                # 添加回放参数
+                replay_url = f'{channel["url"]}&replay=1&days={replay_days}'
+                f.write(f'{metadata},{channel["name"]}\n')
+                f.write(f'{replay_url}\n')
+            f.write('\n')
 
-    if not filtered_channels:
-        logging.warning("过滤后无有效频道，TXT 文件将为空。")
-        return
 
-    # 按组分组
+# 生成 TXT 文件
+def generate_txt_file(channels, output_path, custom_sort_order=None):
+    # 按分组标题分组
     group_channels = {}
-    for channel in filtered_channels:
+    for channel in channels:
         group_title = channel['group_title'] or ''
-        group_channels.setdefault(group_title, []).append(channel)
+        if group_title not in group_channels:
+            group_channels[group_title] = []
+        group_channels[group_title].append(channel)
 
-    sorted_groups = sorted(group_channels.keys())
+    def custom_sort_key(group_title):
+        if custom_sort_order and group_title in custom_sort_order:
+            return custom_sort_order.index(group_title)
+        return float('inf')
 
-    try:
-        with open(output_path, 'w', encoding='utf-8') as f:
-            for group_title in sorted_groups:
-                group = group_channels[group_title]
-                sorted_group = sorted(group, key=lambda x: x['response_time'])
-                if group_title:
-                    f.write(f'{group_title}#genre#\n')
-                for channel in sorted_group:
-                    f.write(f'{channel["name"]},{channel["url"]}\n')
-                f.write('\n')
-        logging.info(f"成功生成 TXT 文件: {output_path}")
-    except Exception as e:
-        logging.error(f"生成 TXT 文件时出错: {e}")
+    sorted_groups = sorted(group_channels.keys(), key=custom_sort_key)
+
+    with open(output_path, 'w', encoding='utf-8') as f:
+        for group_title in sorted_groups:
+            group = group_channels[group_title]
+            # 组内按响应时间排序
+            sorted_group = sorted(group, key=lambda x: x['response_time'])
+            if group_title:
+                f.write(f'{group_title}#genre#\n')
+            for channel in sorted_group:
+                f.write(f'{channel["name"]},{channel["url"]}\n')
+            f.write('\n')
+
 
 async def main():
-    # 配置文件路径
     subscribe_file = 'config/subscribe.txt'
     output_m3u = 'output/result.m3u'
     output_txt = 'output/result.txt'
-    include_list_file = 'config/include_list.txt'
+
+    # 自定义排序顺序
+    custom_sort_order = ['🍄广东频道', '🍓央视频道', '🐧卫视频道', '🦄️港·澳·台', '🥝aktv', '直播']
 
     # 确保输出目录存在
     output_dir = os.path.dirname(output_m3u)
     if not os.path.exists(output_dir):
-        try:
-            os.makedirs(output_dir)
-        except PermissionError:
-            logging.error(f"没有权限创建输出目录: {output_dir}")
-            return
+        os.makedirs(output_dir)
 
     # 读取订阅文件
     urls = read_subscribe_file(subscribe_file)
@@ -230,8 +213,8 @@ async def main():
         results = await asyncio.gather(*tasks)
 
     all_channels = []
-    for content in results:
-        if content is not None:
+    for content, _ in results:
+        if content:
             if '#EXTM3U' in content:
                 channels = parse_m3u_content(content)
             else:
@@ -241,28 +224,17 @@ async def main():
     # 合并并去重频道
     unique_channels = merge_and_deduplicate(all_channels)
 
-    if not unique_channels:
-        logging.error("未获取到有效的频道信息。")
-        return
-
     # 测试每个频道的响应时间
     async with aiohttp.ClientSession() as session:
         tasks = [test_channel_response_time(session, channel) for channel in unique_channels]
         unique_channels = await asyncio.gather(*tasks)
 
-    # 可配置最大响应时间，过滤掉响应时间过长的频道
-    max_response_time = 5  # 单位：秒
-
-    # 从文件读取要保留的组名和频道名
-    include_list = read_include_list(include_list_file)
-    include_groups = [item.replace('group:', '').strip() for item in include_list if item.startswith('group:')]
-    include_channels = [item for item in include_list if not item.startswith('group:')]
-
     # 生成 M3U 和 TXT 文件
-    generate_m3u_file(unique_channels, output_m3u, max_response_time=max_response_time,
-                      include_groups=include_groups, include_channels=include_channels)
-    generate_txt_file(unique_channels, output_txt, max_response_time=max_response_time,
-                      include_groups=include_groups, include_channels=include_channels)
+    generate_m3u_file(unique_channels, output_m3u, custom_sort_order=custom_sort_order)
+    generate_txt_file(unique_channels, output_txt, custom_sort_order=custom_sort_order)
+
+    logging.info("成功生成 M3U 和 TXT 文件。")
+
 
 if __name__ == '__main__':
-    asyncio.run(main())    
+    asyncio.run(main())
