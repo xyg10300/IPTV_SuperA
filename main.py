@@ -119,8 +119,8 @@ async def test_channel_response_time(session, channel):
     return channel
 
 
-# 生成 M3U 文件
-def generate_m3u_file(channels, output_path):
+# 生成 M3U 文件，增加 EPG 回放支持
+def generate_m3u_file(channels, output_path, replay_days=7):
     sorted_channels = sorted(channels, key=lambda x: x['response_time'])
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
@@ -132,8 +132,10 @@ def generate_m3u_file(channels, output_path):
                 metadata += f' tvg-name="{channel["tvg_name"]}"'
             if channel['group_title']:
                 metadata += f' group-title="{channel["group_title"]}"'
+            # 添加回放参数
+            replay_url = f'{channel["url"]}&replay=1&days={replay_days}'
             f.write(f'{metadata},{channel["name"]}\n')
-            f.write(f'{channel["url"]}\n')
+            f.write(f'{replay_url}\n')
 
 
 # 生成 TXT 文件
