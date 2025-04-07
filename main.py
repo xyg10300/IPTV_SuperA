@@ -19,20 +19,26 @@ def read_subscribe_file(file_path):
         return []
 
 
-# 异步获取 URL 内容并测试响应时间
-async def fetch_url(session, url):
-    start_time = time.time()
-    try:
-        async with session.get(url, timeout=10) as response:
-            if response.status == 200:
-                content = await response.text()
-                elapsed_time = time.time() - start_time
-                return content, elapsed_time
-            else:
-                logging.warning(f"请求 {url} 失败，状态码: {response.status}")
-    except Exception as e:
-        logging.error(f"请求 {url} 时发生错误: {e}")
-    return None, float('inf')
+# 异步获取 URL 内容并测试响应时间，多次请求取平均值
+async def fetch_url(session, url, num_tries=3):
+    total_time = 0
+    successful_tries = 0
+    for _ in range(num_tries):
+        start_time = time.time()
+        try:
+            async with session.get(url, timeout=10) as response:
+                if response.status == 200:
+                    await response.text()
+                    elapsed_time = time.time() - start_time
+                    total_time += elapsed_time
+                    successful_tries += 1
+                else:
+                    logging.warning(f"请求 {url} 失败，状态码: {response.status}")
+        except Exception as e:
+            logging.error(f"请求 {url} 时发生错误: {e}")
+    if successful_tries > 0:
+        return total_time / successful_tries
+    return float('inf')
 
 
 # 解析 M3U 格式内容
@@ -101,24 +107,19 @@ def merge_and_deduplicate(channels_list):
 
 
 # 测试每个频道的响应时间
-async def test_channel_response_time(session, channel):
-    start_time = time.time()
-    try:
-        async with session.get(channel['url'], timeout=10) as response:
-            if response.status == 200:
-                elapsed_time = time.time() - start_time
-                channel['response_time'] = elapsed_time
-    except Exception as e:
-        logging.error(f"测试 {channel['url']} 响应时间时发生错误: {e}")
+async def test_channel_response_time(session, channel, num_tries=3):
+    response_time = await fetch_url(session, channel['url'], num_tries)
+    channel['response_time'] = response_time
     return channel
 
 
-# 生成 M3U 文件，增加 EPG 回放支持
-def generate_m3u_file(channels, output_path, replay_days=7):
+# 生成 M3U 文件，增加 EPG 回放支持，可过滤响应时间过长的频道
+def generate_m3u_file(channels, output_path, replay_days=7, max_response_time=float('inf')):
     group_channels = {}
     for channel in channels:
-        group_title = channel['group_title'] or ''
-        group_channels.setdefault(group_title, []).append(channel)
+        if channel['response_time'] <= max_response_time:
+            group_title = channel['group_title'] or ''
+            group_channels.setdefault(group_title, []).append(channel)
 
     sorted_groups = sorted(group_channels.keys())
 
@@ -136,7 +137,6 @@ def generate_m3u_file(channels, output_path, replay_days=7):
                 if channel['tvg_name']:
                     metadata += f' tvg-name="{channel["tvg_name"]}"'
                 if channel['group_title']:
-                    # 去除多余逗号
                     metadata += f' group-title="{channel["group_title"].rstrip(",")}"'
                 replay_url = f'{channel["url"]}&replay=1&days={replay_days}'
                 f.write(f'{metadata},{channel["name"]}\n')
@@ -144,12 +144,13 @@ def generate_m3u_file(channels, output_path, replay_days=7):
             f.write('\n')
 
 
-# 生成 TXT 文件
-def generate_txt_file(channels, output_path):
+# 生成 TXT 文件，可过滤响应时间过长的频道
+def generate_txt_file(channels, output_path, max_response_time=float('inf')):
     group_channels = {}
     for channel in channels:
-        group_title = channel['group_title'] or ''
-        group_channels.setdefault(group_title, []).append(channel)
+        if channel['response_time'] <= max_response_time:
+            group_title = channel['group_title'] or ''
+            group_channels.setdefault(group_title, []).append(channel)
 
     sorted_groups = sorted(group_channels.keys())
 
@@ -186,8 +187,8 @@ async def main():
         results = await asyncio.gather(*tasks)
 
     all_channels = []
-    for content, _ in results:
-        if content:
+    for content, _ in zip(results, urls):
+        if content is not None:
             if '#EXTM3U' in content:
                 channels = parse_m3u_content(content)
             else:
@@ -206,12 +207,14 @@ async def main():
         tasks = [test_channel_response_time(session, channel) for channel in unique_channels]
         unique_channels = await asyncio.gather(*tasks)
 
+    # 可配置最大响应时间，过滤掉响应时间过长的频道
+    max_response_time = 5  # 单位：秒
     # 生成 M3U 和 TXT 文件
-    generate_m3u_file(unique_channels, output_m3u)
-    generate_txt_file(unique_channels, output_txt)
+    generate_m3u_file(unique_channels, output_m3u, max_response_time=max_response_time)
+    generate_txt_file(unique_channels, output_txt, max_response_time=max_response_time)
 
     logging.info("成功生成 M3U 和 TXT 文件。")
 
 
 if __name__ == '__main__':
-    asyncio.run(main())    
+    asyncio.run(main())
