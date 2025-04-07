@@ -5,7 +5,6 @@ import os
 from collections import OrderedDict
 import re
 import time
-import socket
 
 # 配置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -21,38 +20,20 @@ def read_subscribe_file(file_path):
         return []
 
 
-# 异步获取 URL 内容并测试响应时间，区分 IPv4 和 IPv6
+# 异步获取 URL 内容并测试响应时间
 async def fetch_url(session, url):
-    ipv4_start_time = time.time()
-    ipv4_response = None
-    ipv4_elapsed_time = float('inf')
-    ipv6_start_time = time.time()
-    ipv6_response = None
-    ipv6_elapsed_time = float('inf')
-
+    start_time = time.time()
     try:
-        # 尝试 IPv4 请求
-        async with session.get(url, timeout=10, family=socket.AF_INET) as response:
+        async with session.get(url, timeout=10) as response:
             if response.status == 200:
-                ipv4_response = await response.text()
-                ipv4_elapsed_time = time.time() - ipv4_start_time
+                content = await response.text()
+                elapsed_time = time.time() - start_time
+                return content, elapsed_time
+            else:
+                logging.warning(f"请求 {url} 失败，状态码: {response.status}")
     except Exception as e:
-        logging.error(f"IPv4 请求 {url} 时发生错误: {e}")
-
-    try:
-        # 尝试 IPv6 请求
-        async with session.get(url, timeout=10, family=socket.AF_INET6) as response:
-            if response.status == 200:
-                ipv6_response = await response.text()
-                ipv6_elapsed_time = time.time() - ipv6_start_time
-    except Exception as e:
-        logging.error(f"IPv6 请求 {url} 时发生错误: {e}")
-
-    # 选择响应时间更短的结果
-    if ipv4_elapsed_time < ipv6_elapsed_time:
-        return ipv4_response, ipv4_elapsed_time
-    else:
-        return ipv6_response, ipv6_elapsed_time
+        logging.error(f"请求 {url} 时发生错误: {e}")
+    return None, float('inf')
 
 
 # 解析 M3U 格式内容
@@ -125,33 +106,16 @@ def merge_and_deduplicate(channels_list):
     return unique_channels
 
 
-# 测试每个频道的响应时间，区分 IPv4 和 IPv6
+# 测试每个频道的响应时间
 async def test_channel_response_time(session, channel):
-    ipv4_start_time = time.time()
-    ipv4_response = None
-    ipv4_elapsed_time = float('inf')
-    ipv6_start_time = time.time()
-    ipv6_response = None
-    ipv6_elapsed_time = float('inf')
-
+    start_time = time.time()
     try:
-        # 尝试 IPv4 请求
-        async with session.get(channel['url'], timeout=10, family=socket.AF_INET) as response:
+        async with session.get(channel['url'], timeout=10) as response:
             if response.status == 200:
-                ipv4_elapsed_time = time.time() - ipv4_start_time
+                elapsed_time = time.time() - start_time
+                channel['response_time'] = elapsed_time
     except Exception as e:
-        logging.error(f"IPv4 测试 {channel['url']} 响应时间时发生错误: {e}")
-
-    try:
-        # 尝试 IPv6 请求
-        async with session.get(channel['url'], timeout=10, family=socket.AF_INET6) as response:
-            if response.status == 200:
-                ipv6_elapsed_time = time.time() - ipv6_start_time
-    except Exception as e:
-        logging.error(f"IPv6 测试 {channel['url']} 响应时间时发生错误: {e}")
-
-    # 选择响应时间更短的结果
-    channel['response_time'] = min(ipv4_elapsed_time, ipv6_elapsed_time)
+        logging.error(f"测试 {channel['url']} 响应时间时发生错误: {e}")
     return channel
 
 
