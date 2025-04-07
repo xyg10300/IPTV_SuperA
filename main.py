@@ -1,6 +1,6 @@
 import asyncio
 import aiohttp
-from utils.speed import get_speed
+from utils.speed import get_speed_with_download  # 修改为导入正确的函数
 from utils.tools import convert_to_m3u
 from utils.config import config_instance
 
@@ -14,7 +14,7 @@ async def fetch_urls():
     tasks = []
     async with aiohttp.ClientSession() as session:
         for url in urls:
-            task = asyncio.create_task(get_speed(url, session=session))
+            task = asyncio.create_task(get_speed_with_download(url, session=session))
             tasks.append(task)
         results = await asyncio.gather(*tasks)
     return results
@@ -29,3 +29,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
