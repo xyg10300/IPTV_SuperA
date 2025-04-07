@@ -120,52 +120,81 @@ async def test_channel_response_time(session, channel):
 
 
 # 生成 M3U 文件，增加 EPG 回放支持
-def generate_m3u_file(channels, output_path, replay_days=7):
-    # 先按分组标题排序，再按响应时间排序
-    sorted_channels = sorted(channels, key=lambda x: (x['group_title'] or '', x['response_time']))
+def generate_m3u_file(channels, output_path, replay_days=7, custom_sort_order=None):
+    # 按分组标题分组
+    group_channels = {}
+    for channel in channels:
+        group_title = channel['group_title'] or ''
+        if group_title not in group_channels:
+            group_channels[group_title] = []
+        group_channels[group_title].append(channel)
+
+    # 自定义排序
+    if custom_sort_order:
+        sorted_groups = sorted(group_channels.keys(), key=lambda x: custom_sort_order.index(x) if x in custom_sort_order else float('inf'))
+    else:
+        # 智能化排序：按频道数量排序
+        sorted_groups = sorted(group_channels.keys(), key=lambda x: len(group_channels[x]), reverse=True)
+
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
-        current_group = None
-        for channel in sorted_channels:
-            group_title = channel['group_title']
-            if group_title and group_title != current_group:
-                if current_group is not None:
-                    f.write('\n')
+        for group_title in sorted_groups:
+            group = group_channels[group_title]
+            # 组内按响应时间排序
+            sorted_group = sorted(group, key=lambda x: x['response_time'])
+            if group_title:
                 f.write(f'#EXTGRP:{group_title}\n')
-                current_group = group_title
-            metadata = '#EXTINF:-1'
-            if channel['tvg_id']:
-                metadata += f' tvg-id="{channel["tvg_id"]}"'
-            if channel['tvg_name']:
-                metadata += f' tvg-name="{channel["tvg_name"]}"'
-            if channel['group_title']:
-                metadata += f' group-title="{channel["group_title"]}"'
-            # 添加回放参数
-            replay_url = f'{channel["url"]}&replay=1&days={replay_days}'
-            f.write(f'{metadata},{channel["name"]}\n')
-            f.write(f'{replay_url}\n')
+            for channel in sorted_group:
+                metadata = '#EXTINF:-1'
+                if channel['tvg_id']:
+                    metadata += f' tvg-id="{channel["tvg_id"]}"'
+                if channel['tvg_name']:
+                    metadata += f' tvg-name="{channel["tvg_name"]}"'
+                if channel['group_title']:
+                    metadata += f' group-title="{channel["group_title"]}"'
+                # 添加回放参数
+                replay_url = f'{channel["url"]}&replay=1&days={replay_days}'
+                f.write(f'{metadata},{channel["name"]}\n')
+                f.write(f'{replay_url}\n')
+            f.write('\n')
 
 
 # 生成 TXT 文件
-def generate_txt_file(channels, output_path):
-    # 先按分组标题排序，再按响应时间排序
-    sorted_channels = sorted(channels, key=lambda x: (x['group_title'] or '', x['response_time']))
+def generate_txt_file(channels, output_path, custom_sort_order=None):
+    # 按分组标题分组
+    group_channels = {}
+    for channel in channels:
+        group_title = channel['group_title'] or ''
+        if group_title not in group_channels:
+            group_channels[group_title] = []
+        group_channels[group_title].append(channel)
+
+    # 自定义排序
+    if custom_sort_order:
+        sorted_groups = sorted(group_channels.keys(), key=lambda x: custom_sort_order.index(x) if x in custom_sort_order else float('inf'))
+    else:
+        # 智能化排序：按频道数量排序
+        sorted_groups = sorted(group_channels.keys(), key=lambda x: len(group_channels[x]), reverse=True)
+
     with open(output_path, 'w', encoding='utf-8') as f:
-        current_group = None
-        for channel in sorted_channels:
-            group_title = channel['group_title']
-            if group_title and group_title != current_group:
-                if current_group is not None:
-                    f.write('\n')
+        for group_title in sorted_groups:
+            group = group_channels[group_title]
+            # 组内按响应时间排序
+            sorted_group = sorted(group, key=lambda x: x['response_time'])
+            if group_title:
                 f.write(f'{group_title}#genre#\n')
-                current_group = group_title
-            f.write(f'{channel["name"]},{channel["url"]}\n')
+            for channel in sorted_group:
+                f.write(f'{channel["name"]},{channel["url"]}\n')
+            f.write('\n')
 
 
 async def main():
     subscribe_file = 'config/subscribe.txt'
     output_m3u = 'output/result.m3u'
     output_txt = 'output/result.txt'
+
+    # 自定义排序顺序
+    custom_sort_order = ['🍄广东频道', '🍓央视频道', '🐧卫视频道', '🦄️港·澳·台', '🥝aktv', '直播']
 
     # 确保输出目录存在
     output_dir = os.path.dirname(output_m3u)
@@ -201,8 +230,8 @@ async def main():
         unique_channels = await asyncio.gather(*tasks)
 
     # 生成 M3U 和 TXT 文件
-    generate_m3u_file(unique_channels, output_m3u)
-    generate_txt_file(unique_channels, output_txt)
+    generate_m3u_file(unique_channels, output_m3u, custom_sort_order=custom_sort_order)
+    generate_txt_file(unique_channels, output_txt, custom_sort_order=custom_sort_order)
 
     logging.info("成功生成 M3U 和 TXT 文件。")
 
