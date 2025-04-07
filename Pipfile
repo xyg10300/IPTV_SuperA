@@ -1,3 +1,13 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pytest = "*"
+
 [packages]
-flask = "*"
-requests = "* `ParseError` due to an invalid key. It seems there"
+requests = "*"
+
+[requires]
+python_version = "3.8"
