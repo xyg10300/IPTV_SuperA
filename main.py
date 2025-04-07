@@ -129,11 +129,12 @@ def generate_m3u_file(channels, output_path, replay_days=7, custom_sort_order=No
             group_channels[group_title] = []
         group_channels[group_title].append(channel)
 
-    # 自定义排序
-    if custom_sort_order:
-        sorted_groups = sorted(group_channels.keys(), key=lambda x: custom_sort_order.index(x) if x in custom_sort_order else float('inf'))
-    else:
-        sorted_groups = sorted(group_channels.keys())
+    def custom_sort_key(group_title):
+        if custom_sort_order and group_title in custom_sort_order:
+            return custom_sort_order.index(group_title)
+        return float('inf')
+
+    sorted_groups = sorted(group_channels.keys(), key=custom_sort_key)
 
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
@@ -168,11 +169,12 @@ def generate_txt_file(channels, output_path, custom_sort_order=None):
             group_channels[group_title] = []
         group_channels[group_title].append(channel)
 
-    # 自定义排序
-    if custom_sort_order:
-        sorted_groups = sorted(group_channels.keys(), key=lambda x: custom_sort_order.index(x) if x in custom_sort_order else float('inf'))
-    else:
-        sorted_groups = sorted(group_channels.keys())
+    def custom_sort_key(group_title):
+        if custom_sort_order and group_title in custom_sort_order:
+            return custom_sort_order.index(group_title)
+        return float('inf')
+
+    sorted_groups = sorted(group_channels.keys(), key=custom_sort_key)
 
     with open(output_path, 'w', encoding='utf-8') as f:
         for group_title in sorted_groups:
