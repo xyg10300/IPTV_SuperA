@@ -2,7 +2,6 @@ import asyncio
 import aiohttp
 import logging
 import os
-from collections import OrderedDict
 import re
 import time
 
@@ -40,8 +39,7 @@ async def fetch_url(session, url):
 def parse_m3u_content(content):
     channels = []
     lines = content.splitlines()
-    i = 0
-    while i < len(lines):
+    for i in range(len(lines)):
         line = lines[i].strip()
         if line.startswith('#EXTINF:'):
             info = line.split(',', 1)
@@ -51,9 +49,8 @@ def parse_m3u_content(content):
                 tvg_id = re.search(r'tvg-id="([^"]+)"', metadata)
                 tvg_name = re.search(r'tvg-name="([^"]+)"', metadata)
                 group_title = re.search(r'group-title="([^"]+)"', metadata)
-                i += 1
-                if i < len(lines):
-                    url = lines[i].strip()
+                if i + 1 < len(lines):
+                    url = lines[i + 1].strip()
                     channel = {
                         'name': name,
                         'url': url,
@@ -63,7 +60,6 @@ def parse_m3u_content(content):
                         'response_time': float('inf')
                     }
                     channels.append(channel)
-        i += 1
     return channels
 
 
@@ -94,15 +90,13 @@ def parse_txt_content(content):
 
 # 合并并去重频道
 def merge_and_deduplicate(channels_list):
-    all_channels = []
-    for channels in channels_list:
-        all_channels.extend(channels)
     unique_channels = []
     url_set = set()
-    for channel in all_channels:
-        if channel['url'] not in url_set:
-            unique_channels.append(channel)
-            url_set.add(channel['url'])
+    for channels in channels_list:
+        for channel in channels:
+            if channel['url'] not in url_set:
+                unique_channels.append(channel)
+                url_set.add(channel['url'])
     return unique_channels
 
 
@@ -120,39 +114,29 @@ async def test_channel_response_time(session, channel):
 
 
 # 生成 M3U 文件，增加 EPG 回放支持
-def generate_m3u_file(channels, output_path, replay_days=7, custom_sort_order=None):
-    # 按分组标题分组
+def generate_m3u_file(channels, output_path, replay_days=7):
     group_channels = {}
     for channel in channels:
         group_title = channel['group_title'] or ''
-        if group_title not in group_channels:
-            group_channels[group_title] = []
-        group_channels[group_title].append(channel)
+        group_channels.setdefault(group_title, []).append(channel)
 
-    # 自定义排序
-    if custom_sort_order:
-        sorted_groups = sorted(group_channels.keys(), key=lambda x: custom_sort_order.index(x) if x in custom_sort_order else float('inf'))
-    else:
-        sorted_groups = sorted(group_channels.keys())
+    sorted_groups = sorted(group_channels.keys())
 
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
         for group_title in sorted_groups:
             group = group_channels[group_title]
-            # 组内按响应时间排序
             sorted_group = sorted(group, key=lambda x: x['response_time'])
             if group_title:
                 f.write(f'#EXTGRP:{group_title}\n')
             for channel in sorted_group:
-                metadata_parts = ['#EXTINF:-1']
+                metadata = '#EXTINF:-1'
                 if channel['tvg_id']:
-                    metadata_parts.append(f'tvg-id="{channel["tvg_id"]}"')
+                    metadata += f' tvg-id="{channel["tvg_id"]}"'
                 if channel['tvg_name']:
-                    metadata_parts.append(f'tvg-name="{channel["tvg_name"]}"')
+                    metadata += f' tvg-name="{channel["tvg_name"]}"'
                 if channel['group_title']:
-                    metadata_parts.append(f'group-title="{channel["group_title"]}"')
-                metadata = ' '.join(metadata_parts)
-                # 添加回放参数
+                    metadata += f' group-title="{channel["group_title"]}"'
                 replay_url = f'{channel["url"]}&replay=1&days={replay_days}'
                 f.write(f'{metadata},{channel["name"]}\n')
                 f.write(f'{replay_url}\n')
@@ -160,25 +144,17 @@ def generate_m3u_file(channels, output_path, replay_days=7, custom_sort_order=No
 
 
 # 生成 TXT 文件
-def generate_txt_file(channels, output_path, custom_sort_order=None):
-    # 按分组标题分组
+def generate_txt_file(channels, output_path):
     group_channels = {}
     for channel in channels:
         group_title = channel['group_title'] or ''
-        if group_title not in group_channels:
-            group_channels[group_title] = []
-        group_channels[group_title].append(channel)
+        group_channels.setdefault(group_title, []).append(channel)
 
-    # 自定义排序
-    if custom_sort_order:
-        sorted_groups = sorted(group_channels.keys(), key=lambda x: custom_sort_order.index(x) if x in custom_sort_order else float('inf'))
-    else:
-        sorted_groups = sorted(group_channels.keys())
+    sorted_groups = sorted(group_channels.keys())
 
     with open(output_path, 'w', encoding='utf-8') as f:
         for group_title in sorted_groups:
             group = group_channels[group_title]
-            # 组内按响应时间排序
             sorted_group = sorted(group, key=lambda x: x['response_time'])
             if group_title:
                 f.write(f'{group_title}#genre#\n')
@@ -191,9 +167,6 @@ async def main():
     subscribe_file = 'config/subscribe.txt'
     output_m3u = 'output/result.m3u'
     output_txt = 'output/result.txt'
-
-    # 自定义排序顺序
-    custom_sort_order = ['🍄广东频道', '🍓央视频道', '🐧卫视频道', '🦄️港·澳·台', '🥝aktv', '直播']
 
     # 确保输出目录存在
     output_dir = os.path.dirname(output_m3u)
@@ -223,14 +196,18 @@ async def main():
     # 合并并去重频道
     unique_channels = merge_and_deduplicate(all_channels)
 
+    if not unique_channels:
+        logging.error("未获取到有效的频道信息。")
+        return
+
     # 测试每个频道的响应时间
     async with aiohttp.ClientSession() as session:
         tasks = [test_channel_response_time(session, channel) for channel in unique_channels]
         unique_channels = await asyncio.gather(*tasks)
 
     # 生成 M3U 和 TXT 文件
-    generate_m3u_file(unique_channels, output_m3u, custom_sort_order=custom_sort_order)
-    generate_txt_file(unique_channels, output_txt, custom_sort_order=custom_sort_order)
+    generate_m3u_file(unique_channels, output_m3u)
+    generate_txt_file(unique_channels, output_txt)
 
     logging.info("成功生成 M3U 和 TXT 文件。")
 
