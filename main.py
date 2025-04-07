@@ -2,22 +2,23 @@ import asyncio
 import aiohttp
 import logging
 import os
-import re
 from collections import OrderedDict
 
 # 配置日志
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# 读取订阅文件
+
+# 读取订阅文件中的 URL
 def read_subscribe_file(file_path):
     try:
-        with open(file_path, 'r') as f:
+        with open(file_path, 'r', encoding='utf-8') as f:
             return [line.strip() for line in f if line.strip()]
     except FileNotFoundError:
-        logging.error(f"订阅文件 {file_path} 未找到。")
+        logging.error(f"未找到订阅文件: {file_path}")
         return []
 
-# 异步抓取直播源信息
+
+# 异步获取 URL 内容
 async def fetch_url(session, url):
     try:
         async with session.get(url) as response:
@@ -25,12 +26,12 @@ async def fetch_url(session, url):
                 return await response.text()
             else:
                 logging.warning(f"请求 {url} 失败，状态码: {response.status}")
-                return None
     except Exception as e:
         logging.error(f"请求 {url} 时发生错误: {e}")
-        return None
+    return None
 
-# 解析 M3U 内容，提取频道信息
+
+# 解析 M3U 格式内容
 def parse_m3u_content(content):
     channels = []
     lines = content.splitlines()
@@ -40,55 +41,67 @@ def parse_m3u_content(content):
         if line.startswith('#EXTINF:'):
             info = line.split(',', 1)
             if len(info) == 2:
-                metadata = info[0]
                 name = info[1]
                 i += 1
                 if i < len(lines):
                     url = lines[i].strip()
-                    # 提取 EPG 和台标信息
-                    epg = re.search(r'tvg-id="([^"]+)"', metadata)
-                    logo = re.search(r'tvg-logo="([^"]+)"', metadata)
-                    channel = {
-                        'name': name,
-                        'url': url,
-                        'epg': epg.group(1) if epg else None,
-                        'logo': logo.group(1) if logo else None
-                    }
-                    channels.append(channel)
+                    channels.append((name, url))
         i += 1
     return channels
 
-# 合并和去重频道
-def merge_and_deduplicate_channels(channels_list):
+
+# 解析 TXT 格式内容
+def parse_txt_content(content):
+    channels = []
+    genre = None
+    lines = content.splitlines()
+    for line in lines:
+        line = line.strip()
+        if line.endswith('#genre#'):
+            genre = line.replace('#genre#', '').strip()
+        elif line:
+            parts = line.split(',', 1)
+            if len(parts) == 2:
+                name, url = parts
+                if genre:
+                    name = f"{genre}-{name}"
+                channels.append((name, url))
+    return channels
+
+
+# 合并并去重频道
+def merge_and_deduplicate(channels_list):
     all_channels = []
     for channels in channels_list:
         all_channels.extend(channels)
-    unique_channels = list(OrderedDict((channel['url'], channel) for channel in all_channels).values())
+    unique_channels = list(OrderedDict(all_channels).items())
     return unique_channels
 
+
 # 生成 M3U 文件
-def generate_m3u_file(channels, output_path, replay_days=3):
-    with open(output_path, 'w') as f:
+def generate_m3u_file(channels, output_path):
+    with open(output_path, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
-        for channel in channels:
-            metadata = f'#EXTINF:-1'
-            if channel['epg']:
-                metadata += f' tvg-id="{channel["epg"]}"'
-            if channel['logo']:
-                metadata += f' tvg-logo="{channel["logo"]}"'
-            # 添加回放信息
-            replay_url = f'{channel["url"]}&replay=1&days={replay_days}'
-            f.write(f'{metadata}, {channel["name"]}\n')
-            f.write(f'{replay_url}\n')
+        for name, url in channels:
+            f.write(f'#EXTINF:-1,{name}\n')
+            f.write(f'{url}\n')
+
 
 # 生成 TXT 文件
 def generate_txt_file(channels, output_path):
-    with open(output_path, 'w') as f:
-        for channel in channels:
-            f.write(f'{channel["url"]}\n')
+    with open(output_path, 'w', encoding='utf-8') as f:
+        for name, url in channels:
+            parts = name.split('-', 1)
+            if len(parts) == 2:
+                genre, name = parts
+                f.write(f'{genre},#genre#\n')
+                f.write(f'{name},{url}\n')
+            else:
+                f.write(f'{name},{url}\n')
+
 
 async def main():
-    subscribe_file = 'subscribe.txt'
+    subscribe_file = 'config/subscribe.txt'
     output_m3u = 'output/result.m3u'
     output_txt = 'output/result.txt'
 
@@ -100,27 +113,32 @@ async def main():
     # 读取订阅文件
     urls = read_subscribe_file(subscribe_file)
     if not urls:
-        logging.error("未找到有效的订阅 URL。")
+        logging.error("订阅文件中没有有效的 URL。")
         return
 
-    # 异步抓取直播源信息
+    # 异步获取所有 URL 的内容
     async with aiohttp.ClientSession() as session:
         tasks = [fetch_url(session, url) for url in urls]
         contents = await asyncio.gather(*tasks)
 
-    # 解析和合并频道
-    channels_list = []
+    all_channels = []
     for content in contents:
         if content:
-            channels = parse_m3u_content(content)
-            channels_list.append(channels)
-    unique_channels = merge_and_deduplicate_channels(channels_list)
+            if '#EXTM3U' in content:
+                channels = parse_m3u_content(content)
+            else:
+                channels = parse_txt_content(content)
+            all_channels.append(channels)
+
+    # 合并并去重频道
+    unique_channels = merge_and_deduplicate(all_channels)
 
     # 生成 M3U 和 TXT 文件
     generate_m3u_file(unique_channels, output_m3u)
     generate_txt_file(unique_channels, output_txt)
 
-    logging.info("M3U 和 TXT 文件生成成功。")
+    logging.info("成功生成 M3U 和 TXT 文件。")
+
 
 if __name__ == '__main__':
     asyncio.run(main())
