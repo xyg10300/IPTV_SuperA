@@ -1,4 +1,3 @@
-echo '
 [[source]]
 name = "pypi"
 url = "https://pypi.org/simple"
@@ -12,8 +11,3 @@ requests = "*"
 
 [requires]
 python_version = "3.8"
-' > Pipfile
-
-git add Pipfile
-git commit -m "Fix Pipfile syntax"
-git push origin main
