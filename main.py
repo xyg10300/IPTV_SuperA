@@ -2,13 +2,11 @@ import asyncio
 import aiohttp
 import logging
 import os
-from collections import OrderedDict
 import re
 import time
 
 # 配置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
 
 # 读取订阅文件中的 URL
 def read_subscribe_file(file_path):
@@ -18,7 +16,6 @@ def read_subscribe_file(file_path):
     except FileNotFoundError:
         logging.error(f"未找到订阅文件: {file_path}")
         return []
-
 
 # 异步获取 URL 内容并测试响应时间
 async def fetch_url(session, url):
@@ -34,7 +31,6 @@ async def fetch_url(session, url):
     except Exception as e:
         logging.error(f"请求 {url} 时发生错误: {e}")
     return None, float('inf')
-
 
 # 解析 M3U 格式内容
 def parse_m3u_content(content):
@@ -66,7 +62,6 @@ def parse_m3u_content(content):
         i += 1
     return channels
 
-
 # 解析 TXT 格式内容
 def parse_txt_content(content):
     channels = []
@@ -91,7 +86,6 @@ def parse_txt_content(content):
                 channels.append(channel)
     return channels
 
-
 # 合并并去重频道
 def merge_and_deduplicate(channels_list):
     all_channels = []
@@ -105,7 +99,6 @@ def merge_and_deduplicate(channels_list):
             url_set.add(channel['url'])
     return unique_channels
 
-
 # 测试每个频道的响应时间
 async def test_channel_response_time(session, channel):
     start_time = time.time()
@@ -118,10 +111,8 @@ async def test_channel_response_time(session, channel):
         logging.error(f"测试 {channel['url']} 响应时间时发生错误: {e}")
     return channel
 
-
-# 生成 M3U 文件，增加 EPG 回放支持
-def generate_m3u_file(channels, output_path, replay_days=7, custom_sort_order=None):
-    # 按分组标题分组
+# 公共的分组和排序逻辑
+def group_and_sort_channels(channels, custom_sort_order=None):
     group_channels = {}
     for channel in channels:
         group_title = channel['group_title'] or ''
@@ -129,18 +120,20 @@ def generate_m3u_file(channels, output_path, replay_days=7, custom_sort_order=No
             group_channels[group_title] = []
         group_channels[group_title].append(channel)
 
-    def custom_sort_key(group_title):
-        if custom_sort_order and group_title in custom_sort_order:
-            return custom_sort_order.index(group_title)
-        return float('inf')
+    if custom_sort_order:
+        sorted_groups = sorted(group_channels.keys(), key=lambda x: custom_sort_order.index(x) if x in custom_sort_order else float('inf'))
+    else:
+        sorted_groups = sorted(group_channels.keys())
 
-    sorted_groups = sorted(group_channels.keys(), key=custom_sort_key)
+    return group_channels, sorted_groups
 
+# 生成 M3U 文件，增加 EPG 回放支持
+def generate_m3u_file(channels, output_path, replay_days=7, custom_sort_order=None):
+    group_channels, sorted_groups = group_and_sort_channels(channels, custom_sort_order)
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
         for group_title in sorted_groups:
             group = group_channels[group_title]
-            # 组内按响应时间排序
             sorted_group = sorted(group, key=lambda x: x['response_time'])
             if group_title:
                 f.write(f'#EXTGRP:{group_title}\n')
@@ -152,41 +145,23 @@ def generate_m3u_file(channels, output_path, replay_days=7, custom_sort_order=No
                     metadata += f' tvg-name="{channel["tvg_name"]}"'
                 if channel['group_title']:
                     metadata += f' group-title="{channel["group_title"]}"'
-                # 添加回放参数
                 replay_url = f'{channel["url"]}&replay=1&days={replay_days}'
                 f.write(f'{metadata},{channel["name"]}\n')
                 f.write(f'{replay_url}\n')
             f.write('\n')
 
-
 # 生成 TXT 文件
 def generate_txt_file(channels, output_path, custom_sort_order=None):
-    # 按分组标题分组
-    group_channels = {}
-    for channel in channels:
-        group_title = channel['group_title'] or ''
-        if group_title not in group_channels:
-            group_channels[group_title] = []
-        group_channels[group_title].append(channel)
-
-    def custom_sort_key(group_title):
-        if custom_sort_order and group_title in custom_sort_order:
-            return custom_sort_order.index(group_title)
-        return float('inf')
-
-    sorted_groups = sorted(group_channels.keys(), key=custom_sort_key)
-
+    group_channels, sorted_groups = group_and_sort_channels(channels, custom_sort_order)
     with open(output_path, 'w', encoding='utf-8') as f:
         for group_title in sorted_groups:
             group = group_channels[group_title]
-            # 组内按响应时间排序
             sorted_group = sorted(group, key=lambda x: x['response_time'])
             if group_title:
                 f.write(f'{group_title}#genre#\n')
             for channel in sorted_group:
                 f.write(f'{channel["name"]},{channel["url"]}\n')
             f.write('\n')
-
 
 async def main():
     subscribe_file = 'config/subscribe.txt'
@@ -234,7 +209,6 @@ async def main():
     generate_txt_file(unique_channels, output_txt, custom_sort_order=custom_sort_order)
 
     logging.info("成功生成 M3U 和 TXT 文件。")
-
 
 if __name__ == '__main__':
     asyncio.run(main())
