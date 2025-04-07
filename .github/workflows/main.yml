@@ -71,9 +71,10 @@ jobs:
         run: |
           if [ -f "main.py" ]; then
             echo "Running main.py to generate M3U and TXT files..."
-            pipenv run python main.py
+            pipenv run python main.py 2>&1 | tee main.log
             if [ $? -ne 0 ]; then
               echo "Failed to generate M3U and TXT files. Check main.py or dependencies."
+              echo "Check main.log for detailed error messages."
               exit 1
             fi
           else
@@ -111,4 +112,4 @@ jobs:
             fi
           else
             echo "No files to add. Skipping commit and push."
-          fi    
+          fi        
