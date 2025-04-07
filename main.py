@@ -121,7 +121,7 @@ async def test_channel_response_time(session, channel):
 
 # 生成 M3U 文件，增加 EPG 回放支持
 def generate_m3u_file(channels, output_path, replay_days=7):
-    sorted_channels = sorted(channels, key=lambda x: x['response_time'])
+    sorted_channels = sorted([channel for channel in channels if channel['response_time'] != float('inf')], key=lambda x: x['response_time'])
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
         for channel in sorted_channels:
@@ -140,7 +140,7 @@ def generate_m3u_file(channels, output_path, replay_days=7):
 
 # 生成 TXT 文件
 def generate_txt_file(channels, output_path):
-    sorted_channels = sorted(channels, key=lambda x: x['response_time'])
+    sorted_channels = sorted([channel for channel in channels if channel['response_time'] != float('inf')], key=lambda x: x['response_time'])
     with open(output_path, 'w', encoding='utf-8') as f:
         current_group = None
         for channel in sorted_channels:
@@ -200,4 +200,3 @@ async def main():
 
 if __name__ == '__main__':
     asyncio.run(main())
-    
