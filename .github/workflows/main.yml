@@ -78,6 +78,11 @@ jobs:
               cat main.log
               exit 1
             fi
+            if [ ! -f "output/result.m3u" ] || [ ! -f "output/result.txt" ]; then
+              echo "M3U and/or TXT files were not generated. Check main.log for details."
+              cat main.log
+              exit 1
+            fi
           else
             echo "Script file main.py not found. Please ensure it exists."
             exit 1
@@ -113,4 +118,4 @@ jobs:
             fi
           else
             echo "No files to add. Skipping commit and push."
-          fi        
+          fi    
