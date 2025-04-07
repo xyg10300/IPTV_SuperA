@@ -75,6 +75,7 @@ jobs:
             if [ $? -ne 0 ]; then
               echo "Failed to generate M3U and TXT files. Check main.py or dependencies."
               echo "Check main.log for detailed error messages."
+              cat main.log
               exit 1
             fi
           else
