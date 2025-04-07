@@ -1,5 +1,4 @@
 http://aktv.space/live.m3u
-https://szyyds.cn/tv/live/x.txt
 https://gitee.com/xxy002/zhiboyuan/raw/master/dsy
 https://gh.tryxd.cn/https://raw.githubusercontent.com/qingtingjjjjjjj/iptv-auto-update/main/my.txt
 https://gh.tryxd.cn/https://raw.githubusercontent.com/alantang1977/auto-iptv/main/live_ipv4.txt
