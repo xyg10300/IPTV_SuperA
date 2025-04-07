@@ -46,10 +46,10 @@ jobs:
 
       - name: Generate M3U and TXT files
         run: |
-          if [ -f "your_script.py" ]; then
+          if [ -f "main.py" ]; then
             pipenv run python main.py
           else
-            echo "Script file your_script.py not found."
+            echo "Script file main.py not found."
             exit 1
           fi  # 这里也添加了缺少的 fi
 
