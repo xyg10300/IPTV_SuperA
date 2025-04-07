@@ -13,18 +13,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Check if Pipfile exists
-        run: |
-          if [ ! -f Pipfile ]; then
-            echo "Error: Pipfile not found in the project root directory."
-            # Optionally clone a template Pipfile or handle the error as desired
-            exit 1
-          fi
-
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.13'
+          # 由于使用pipenv，不需要pip缓存查找requirements.txt或pyproject.toml，移除缓存配置
+          # cache: 'pip'
 
       - name: Install pipenv
         run: pip install pipenv
@@ -48,4 +42,4 @@ jobs:
           else
             git commit -m "Update IPTV files"
             git push
-          fi
+          fi    
