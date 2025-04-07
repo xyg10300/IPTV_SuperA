@@ -8,7 +8,7 @@ from urllib.parse import quote, urlparse
 
 import m3u8
 from aiohttp import ClientSession, TCPConnector
-from utils.config import config_instance  # 导入 config_instance
+from utils.config import config_instance
 
 http.cookies._is_legal_key = lambda _: True
 cache = {}
