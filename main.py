@@ -41,8 +41,10 @@ async def fetch_urls():
             tasks.append(task)
         try:
             results = await asyncio.gather(*tasks)
-            valid_results = [res for res in results if res]
-            logging.info(f"Successfully fetched results for {len(valid_results)} URLs")
+            valid_results = [res for res in results if res and isinstance(res, dict) and 'url' in res]
+            logging.info(f"Successfully fetched {len(valid_results)} valid results from {len(results)} URLs")
+            if not valid_results:
+                logging.warning("No valid results containing 'url' key were found.")
             return valid_results
         except Exception as e:
             logging.error(f"Error occurred while fetching URLs: {e}")
