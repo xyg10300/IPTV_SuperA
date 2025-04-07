@@ -18,7 +18,7 @@ NETWORK_TEST_ADDRESSES = {
 }
 
 # 示例 VPN 代理地址，需要根据实际情况修改
-VPN_PROXY = "http://127.0.0.1:1080"
+VPN_PROXY = "http://127.0.0.1:7897"
 
 
 # 读取订阅文件中的 URL
