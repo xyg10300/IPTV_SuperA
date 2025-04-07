@@ -136,7 +136,8 @@ def generate_m3u_file(channels, output_path, replay_days=7):
                 if channel['tvg_name']:
                     metadata += f' tvg-name="{channel["tvg_name"]}"'
                 if channel['group_title']:
-                    metadata += f' group-title="{channel["group_title"]}"'
+                    # 去除多余逗号
+                    metadata += f' group-title="{channel["group_title"].rstrip(",")}"'
                 replay_url = f'{channel["url"]}&replay=1&days={replay_days}'
                 f.write(f'{metadata},{channel["name"]}\n')
                 f.write(f'{replay_url}\n')
@@ -213,4 +214,4 @@ async def main():
 
 
 if __name__ == '__main__':
-    asyncio.run(main())
+    asyncio.run(main())    
