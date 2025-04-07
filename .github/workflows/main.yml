@@ -33,7 +33,6 @@ jobs:
           else
             echo "Pipfile not found."
             exit 1
-          fi
 
       - name: Install pipenv
         run: pip install pipenv
@@ -45,7 +44,12 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
       - name: Generate M3U and TXT files
-        run: pipenv run dev
+        run: |
+          if [ -f "your_script.py" ]; then
+            pipenv run python main.py
+          else
+            echo "Script file your_script.py not found."
+            exit 1
 
       - name: Commit and push changes
         run: |
@@ -57,4 +61,3 @@ jobs:
           else
             git commit -m "Update IPTV files"
             git push
-          fi    
