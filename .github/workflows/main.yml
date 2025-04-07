@@ -21,37 +21,65 @@ jobs:
       - name: Check Pipfile format
         run: |
           if [ -f "Pipfile" ]; then
-            echo "Checking Pipfile format..."
+            echo "Starting to check Pipfile format..."
             pip install toml
+            set +e
             python -c "import toml; toml.load(open('Pipfile'))"
-            if [ $? -eq 0 ]; then
+            check_status=$?
+            set -e
+            if [ $check_status -eq 0 ]; then
               echo "Pipfile format is valid."
             else
-              echo "Pipfile format is invalid. Please check the file."
+              echo "Pipfile format is invalid. Here is the content of Pipfile:"
+              cat Pipfile
               exit 1
             fi
           else
-            echo "Pipfile not found."
+            echo "Pipfile not found in the project directory. Please ensure it exists."
             exit 1
-          fi  # 这里添加了缺少的 fi
+          fi
 
       - name: Install pipenv
-        run: pip install pipenv
+        run: |
+          echo "Installing pipenv..."
+          pip install pipenv
+          if [ $? -ne 0 ]; then
+            echo "Failed to install pipenv. Please check the network or Python environment."
+            exit 1
+          fi
 
       - name: Install dependencies
-        run: pipenv install --deploy
+        run: |
+          echo "Installing project dependencies..."
+          pipenv install --deploy
+          if [ $? -ne 0 ]; then
+            echo "Failed to install project dependencies. Check Pipfile or network."
+            exit 1
+          fi
 
       - name: Install FFmpeg
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+        run: |
+          echo "Installing FFmpeg..."
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          if [ $? -ne 0 ]; then
+            echo "Failed to install FFmpeg. Check system permissions or network."
+            exit 1
+          fi
 
       - name: Generate M3U and TXT files
         run: |
           if [ -f "main.py" ]; then
+            echo "Running main.py to generate M3U and TXT files..."
             pipenv run python main.py
+            if [ $? -ne 0 ]; then
+              echo "Failed to generate M3U and TXT files. Check main.py or dependencies."
+              exit 1
+            fi
           else
-            echo "Script file main.py not found."
+            echo "Script file main.py not found. Please ensure it exists."
             exit 1
-          fi  # 这里也添加了缺少的 fi
+          fi
 
       - name: Commit and push changes
         run: |
@@ -59,7 +87,13 @@ jobs:
           git config --local user.name "GitHub Action"
           git add output/result.m3u output/result.txt
           if git diff --staged --quiet; then
-            echo "No changes to commit"
+            echo "No changes to commit in output files."
           else
+            echo "Committing and pushing changes to the repository..."
             git commit -m "Update IPTV files"
             git push
+            if [ $? -ne 0 ]; then
+              echo "Failed to push changes to the repository. Check Git configuration or permissions."
+              exit 1
+            fi
+          fi    
