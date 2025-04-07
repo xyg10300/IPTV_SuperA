@@ -26,17 +26,18 @@ async def fetch_url(session, url, num_tries=3):
         try:
             async with session.get(url, timeout=10) as response:
                 if response.status == 200:
-                    await response.text()
+                    content = await response.text()
                     elapsed_time = time.time() - start_time
                     total_time += elapsed_time
                     successful_tries += 1
+                    return content
                 else:
                     logging.warning(f"请求 {url} 失败，状态码: {response.status}")
+        except asyncio.TimeoutError:
+            logging.error(f"请求 {url} 超时")
         except Exception as e:
             logging.error(f"请求 {url} 时发生错误: {e}")
-    if successful_tries > 0:
-        return total_time / successful_tries
-    return float('inf')
+    return None
 
 # 解析 M3U 格式内容
 def parse_m3u_content(content):
@@ -102,8 +103,9 @@ def merge_and_deduplicate(channels_list):
 
 # 测试每个频道的响应时间
 async def test_channel_response_time(session, channel, num_tries=3):
-    response_time = await fetch_url(session, channel['url'], num_tries)
-    channel['response_time'] = response_time
+    response_time = await fetch_url(session, channel['url'], num_tries=1)
+    if response_time is not None:
+        channel['response_time'] = response_time
     return channel
 
 # 从文件读取要保留的组名和频道名
@@ -116,7 +118,7 @@ def read_include_list(file_path):
         return []
 
 # 生成 M3U 文件，增加 EPG 回放支持，可过滤响应时间过长的频道和特定组名或频道
-def generate_m3u_file(channels, output_path, replay_days=7, max_response_time=float('inf'), 
+def generate_m3u_file(channels, output_path, replay_days=7, max_response_time=float('inf'),
                       include_groups=None, include_channels=None):
     try:
         group_channels = {}
@@ -125,11 +127,15 @@ def generate_m3u_file(channels, output_path, replay_days=7, max_response_time=fl
             if channel['response_time'] <= max_response_time:
                 # 过滤特定组名或频道
                 if ((include_groups is None or channel['group_title'] in include_groups) and
-                    (include_channels is None or channel['name'] in include_channels)):
+                        (include_channels is None or channel['name'] in include_channels)):
                     group_title = channel['group_title'] or ''
                     group_channels.setdefault(group_title, []).append(channel)
 
         sorted_groups = sorted(group_channels.keys())
+
+        if not sorted_groups:
+            logging.warning("过滤后无有效频道，M3U 文件将为空。")
+            return
 
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write('#EXTM3U\n')
@@ -155,7 +161,7 @@ def generate_m3u_file(channels, output_path, replay_days=7, max_response_time=fl
         logging.error(f"生成 M3U 文件时出错: {e}")
 
 # 生成 TXT 文件，可过滤响应时间过长的频道和特定组名或频道
-def generate_txt_file(channels, output_path, max_response_time=float('inf'), 
+def generate_txt_file(channels, output_path, max_response_time=float('inf'),
                       include_groups=None, include_channels=None):
     try:
         group_channels = {}
@@ -164,11 +170,15 @@ def generate_txt_file(channels, output_path, max_response_time=float('inf'),
             if channel['response_time'] <= max_response_time:
                 # 过滤特定组名或频道
                 if ((include_groups is None or channel['group_title'] in include_groups) and
-                    (include_channels is None or channel['name'] in include_channels)):
+                        (include_channels is None or channel['name'] in include_channels)):
                     group_title = channel['group_title'] or ''
                     group_channels.setdefault(group_title, []).append(channel)
 
         sorted_groups = sorted(group_channels.keys())
+
+        if not sorted_groups:
+            logging.warning("过滤后无有效频道，TXT 文件将为空。")
+            return
 
         with open(output_path, 'w', encoding='utf-8') as f:
             for group_title in sorted_groups:
@@ -192,7 +202,11 @@ async def main():
     # 确保输出目录存在
     output_dir = os.path.dirname(output_m3u)
     if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
+        try:
+            os.makedirs(output_dir)
+        except PermissionError:
+            logging.error(f"没有权限创建输出目录: {output_dir}")
+            return
 
     # 读取订阅文件
     urls = read_subscribe_file(subscribe_file)
@@ -206,7 +220,7 @@ async def main():
         results = await asyncio.gather(*tasks)
 
     all_channels = []
-    for content, _ in zip(results, urls):
+    for content in results:
         if content is not None:
             if '#EXTM3U' in content:
                 channels = parse_m3u_content(content)
@@ -231,14 +245,13 @@ async def main():
 
     # 从文件读取要保留的组名和频道名
     include_list = read_include_list(include_list_file)
-    include_groups = [item for item in include_list if item.startswith('group:')]
-    include_groups = [group.replace('group:', '') for group in include_groups]
+    include_groups = [item.replace('group:', '').strip() for item in include_list if item.startswith('group:')]
     include_channels = [item for item in include_list if not item.startswith('group:')]
 
     # 生成 M3U 和 TXT 文件
-    generate_m3u_file(unique_channels, output_m3u, max_response_time=max_response_time, 
+    generate_m3u_file(unique_channels, output_m3u, max_response_time=max_response_time,
                       include_groups=include_groups, include_channels=include_channels)
-    generate_txt_file(unique_channels, output_txt, max_response_time=max_response_time, 
+    generate_txt_file(unique_channels, output_txt, max_response_time=max_response_time,
                       include_groups=include_groups, include_channels=include_channels)
 
 if __name__ == '__main__':
