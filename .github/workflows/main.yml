@@ -17,6 +17,7 @@ jobs:
         run: |
           if [ ! -f Pipfile ]; then
             echo "Error: Pipfile not found in the project root directory."
+            # Optionally clone a template Pipfile or handle the error as desired
             exit 1
           fi
 
@@ -47,4 +48,4 @@ jobs:
           else
             git commit -m "Update IPTV files"
             git push
-          fi    
+          fi
