@@ -1,4 +1,4 @@
-name: IPTV M3U Generator
+name: IPTV M3U 每天自动更新
 
 on:
   schedule:
