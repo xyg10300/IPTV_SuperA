@@ -52,6 +52,7 @@ def parse_m3u_content(content):
                 tvg_id = re.search(r'tvg-id="([^"]+)"', metadata)
                 tvg_name = re.search(r'tvg-name="([^"]+)"', metadata)
                 tvg_logo = re.search(r'tvg-logo="([^"]+)"', metadata)
+                tvg_chno = re.search(r'tvg-chno="([^"]+)"', metadata)
                 group_title = re.search(r'group-title="([^"]+)"', metadata)
                 i += 1
                 if i < len(lines):
@@ -62,6 +63,7 @@ def parse_m3u_content(content):
                         'tvg_id': tvg_id.group(1) if tvg_id else None,
                         'tvg_name': tvg_name.group(1) if tvg_name else None,
                         'tvg_logo': tvg_logo.group(1) if tvg_logo else None,
+                        'tvg_chno': tvg_chno.group(1) if tvg_chno else None,
                         'group_title': group_title.group(1) if group_title else None,
                         'response_time': float('inf')
                     }
@@ -88,6 +90,7 @@ def parse_txt_content(content):
                     'tvg_id': None,
                     'tvg_name': None,
                     'tvg_logo': None,
+                    'tvg_chno': None,
                     'group_title': current_group,
                     'response_time': float('inf')
                 }
@@ -118,47 +121,46 @@ async def test_channel_response_time(session, channel):
         logging.error(f"测试 {channel['url']} 响应时间时发生错误: {e}")
     return channel
 
-# 按频道名称归类频道
-def group_channels_by_name(channels):
+# 按频道分组归类频道
+def group_channels_by_group_title(channels):
     grouped_channels = OrderedDict()
     for channel in channels:
-        name = channel['name']
-        if name not in grouped_channels:
-            grouped_channels[name] = []
-        grouped_channels[name].append(channel)
+        group_title = channel['group_title'] if channel['group_title'] else '未分组'
+        if group_title not in grouped_channels:
+            grouped_channels[group_title] = []
+        grouped_channels[group_title].append(channel)
     return grouped_channels
 
 # 生成 M3U 文件，增加 EPG 和台标支持，支持 72 小时至 7 天回看
 def generate_m3u_file(channels, output_path, replay_days_range=(3, 7)):
-    grouped_channels = group_channels_by_name(channels)
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
-        for name, channel_list in grouped_channels.items():
-            sorted_channel_list = sorted(channel_list, key=lambda x: x['response_time'])
-            first_channel = sorted_channel_list[0]
+        for channel in sorted(channels, key=lambda x: (x.get('group_title', '未分组'), x['name'])):
             metadata = '#EXTINF:-1'
-            if first_channel['tvg_id']:
-                metadata += f' tvg-id="{first_channel["tvg_id"]}"'
-            if first_channel['tvg_name']:
-                metadata += f' tvg-name="{first_channel["tvg_name"]}"'
-            if first_channel['tvg_logo']:
-                metadata += f' tvg-logo="{first_channel["tvg_logo"]}"'
-            if first_channel['group_title']:
-                metadata += f' group-title="{first_channel["group_title"]}"'
+            if channel['tvg_id']:
+                metadata += f' tvg-id="{channel["tvg_id"]}"'
+            if channel['tvg_name']:
+                metadata += f' tvg-name="{channel["tvg_name"]}"'
+            if channel['tvg_logo']:
+                metadata += f' tvg-logo="{channel["tvg_logo"]}"'
+            if channel['tvg_chno']:
+                metadata += f' tvg-chno="{channel["tvg_chno"]}"'
+            if channel['group_title']:
+                metadata += f' group-title="{channel["group_title"]}"'
             for replay_days in range(replay_days_range[0], replay_days_range[1] + 1):
-                for channel in sorted_channel_list:
-                    replay_url = f'{channel["url"]}&replay=1&days={replay_days}'
-                    f.write(f'{metadata},{channel["name"]} (回看{replay_days}天，源{channel_list.index(channel) + 1})\n')
-                    f.write(f'{replay_url}\n')
+                replay_url = f'{channel["url"]}&replay=1&days={replay_days}'
+                f.write(f'{metadata},{channel["name"]} (回看{replay_days}天)\n')
+                f.write(f'{replay_url}\n')
 
 # 生成 TXT 文件
 def generate_txt_file(channels, output_path):
-    grouped_channels = group_channels_by_name(channels)
+    grouped_channels = group_channels_by_group_title(channels)
     with open(output_path, 'w', encoding='utf-8') as f:
-        for name, channel_list in grouped_channels.items():
-            sorted_channel_list = sorted(channel_list, key=lambda x: x['response_time'])
-            for channel in sorted_channel_list:
+        for group_title, channel_list in grouped_channels.items():
+            f.write(f'{group_title},#genre#\n')
+            for channel in sorted(channel_list, key=lambda x: x['name']):
                 f.write(f'{channel["name"]},{channel["url"]}\n')
+            f.write('\n')
 
 async def main():
     subscribe_file = 'config/subscribe.txt'
