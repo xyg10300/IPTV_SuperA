@@ -1,43 +1,24 @@
 import asyncio
-import http.cookies
-import json
-import re
-import subprocess
-from time import time
-from urllib.parse import quote, urlparse
+import aiohttp
+import logging
 
-import m3u8
-from aiohttp import ClientSession, TCPConnector
-from utils.config import config_instance
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
-http.cookies._is_legal_key = lambda _: True
-cache = {}
-
-async def get_speed_with_download(url: str, session: ClientSession = None, timeout: int = config_instance.sort_timeout) -> dict[str, float | None]:
-    start_time = time()
-    total_size = 0
-    total_time = 0
-    info = {'speed': None, 'delay': None}
-    if session is None:
-        session = ClientSession(connector=TCPConnector(ssl=False), trust_env=True)
-        created_session = True
-    else:
-        created_session = False
+async def get_speed_with_download(url, session):
     try:
-        async with session.get(url, timeout=timeout) as response:
-            if response.status != 200:
-                raise Exception("Invalid response")
-            info['delay'] = int(round((time() - start_time) * 1000))
-            async for chunk in response.content.iter_any():
-                if chunk:
-                    total_size += len(chunk)
+        logging.debug(f"Starting to fetch data from {url}")
+        async with session.get(url) as response:
+            if response.status == 200:
+                data = await response.text()
+                logging.debug(f"Successfully fetched data from {url}")
+                # 这里需要根据实际情况解析数据，假设返回的是一个包含 'url' 键的字典
+                # 目前简单返回一个示例结果，实际需要根据返回数据调整
+                result = {'url': url}
+                return result
+            else:
+                logging.warning(f"Failed to fetch data from {url}. Status code: {response.status}")
+                return None
     except Exception as e:
-        pass
-    finally:
-        if total_size > 0:
-            total_time += time() - start_time
-            info['speed'] = ((total_size / total_time) if total_time > 0 else 0) / 1024 / 1024
-        if created_session:
-            await session.close()
-        return info
+        logging.error(f"Error occurred while fetching data from {url}: {e}", exc_info=True)
+        return None
     
