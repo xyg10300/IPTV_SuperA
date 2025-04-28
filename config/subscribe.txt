@@ -4,6 +4,7 @@ https://live.iptv-free.com/iptv/languages/zho.m3u
 https://live.izbds.com/tv/iptv4.m3u
 https://live.izbds.com/tv/iptv6.m3u
 http://aktv.space/live.m3u
+http://zhibo.feylen.top/fltv/js/ku9live.php?tpye=fl.txt
 https://szyyds.cn/tv/live/x.txt
 http://47.120.41.246:8899/zb.txt
 https://gitee.com/xxy002/zhiboyuan/raw/master/dsy
