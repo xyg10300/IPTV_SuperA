@@ -1,4 +1,3 @@
-https://git.gra.phite.ro/alantang/itv/raw/branch/main/tv.m3u
 https://live.hacks.tools/iptv/languages/zho.m3u
 https://live.iptv-free.com/iptv/languages/zho.m3u
 https://live.izbds.com/tv/iptv4.m3u
