@@ -1,6 +1,6 @@
-![IPTV](https://socialify.git.ci/alantang1977/IPTV_SuperA/image?description=1&descriptionEditable=IPTV%20%E7%9B%B4%E6%92%AD%E6%BA%90&forks=1&language=1&name=1&owner=1&pattern=Circuit%20Board&stargazers=1&theme=Auto)
+![IPTV](https://raw.githubusercontent.com/alantang1977/X/main/Pictures/Image320.png)
 
-# IPTV-API
+# IPTV_SuperA
 
 一个可高度自定义的IPTV接口更新项目📺，自定义频道菜单，自动获取直播源，测速验效后生成可用的结果，可实现『✨秒播级体验🚀』
 
