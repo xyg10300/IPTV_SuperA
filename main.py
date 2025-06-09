@@ -24,7 +24,18 @@ def read_subscribe_file(file_path):
 def read_include_list_file(file_path):
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
-            return [line.strip() for line in f if line.strip()]
+            include_list = []
+            current_group = None
+            for line in f:
+                line = line.strip()
+                if line.startswith('group:'):
+                    current_group = line.replace('group:', '')
+                elif line:
+                    if current_group:
+                        include_list.append((current_group, line))
+                    else:
+                        include_list.append((None, line))
+            return include_list
     except FileNotFoundError:
         logging.error(f"未找到包含列表文件: {file_path}")
         return []
@@ -132,12 +143,10 @@ async def test_channel_response_time(session, channel):
 # 过滤出包含在 include_list 中的频道
 def filter_channels(channels, include_list):
     filtered_channels = []
-    for channel in channels:
-        group_title = channel['group_title'] or ''
-        name = channel['name']
-        # 如果组名或频道名在 include_list 中，则保留该频道
-        if group_title in include_list or name in include_list:
-            filtered_channels.append(channel)
+    for group_title, name in include_list:
+        for channel in channels:
+            if (group_title is None or channel.get('group_title') == group_title) and channel['name'] == name:
+                filtered_channels.append(channel)
     return filtered_channels
 
 
@@ -220,7 +229,7 @@ async def main():
     include_list_file = 'config/include_list.txt'
 
     # 自定义排序顺序
-    custom_sort_order = ['🍄广东频道', '🍓央视频道', '🐧卫视频道', '🦄️港·澳·台', '🥝aktv', '直播']
+    custom_sort_order = ['🍄广东频道', '🍓央视频道', '🐧卫视频道', '🦄️港·澳·台', '🅱AKTV', '直播']
 
     # 确保输出目录存在
     output_dir = os.path.dirname(output_m3u)
